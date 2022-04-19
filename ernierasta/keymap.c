@@ -8,11 +8,11 @@
 #include "keycodes.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-	[_BKL] = LAYOUT_split_3x5_2(
-			KC_F,  KC_U,    KC_L,    KC_P, KC_D,         KC_H, KC_K, KC_T,    KC_Y,   KC_QUOT,
-			KC_H,  KC_I,    KC_E,    KC_A, KC_DOT,       KC_D, KC_S, KC_T,    KC_N,   KC_B,
-			KC_J,  KC_SLSH, KC_COMM, KC_K, KC_QUOT,      KC_W, KC_F, KC_L,    KC_P,   KC_V,
-					         NUM, NAV_SPC,       RSFT_TRALT, SYM
+	[_KLW] = LAYOUT_split_3x5_2(
+			KC_F,  KC_U, KC_L, KC_P, KC_D,     KC_H, KC_K, KC_T,    KC_Y,   KC_COLN,
+			KC_A,  KC_E, KC_S, KC_N, KC_M,     KC_J, KC_R, KC_Z,    KC_O,   KC_I,
+			KC_V,  KC_X, KC_C, KC_G, KC_Q,     KC_B, KC_W, KC_COMM, KC_DOT, KC_SLSH,
+					 NUM, NAV_SPC,     RSFT_TRALT, SYM
 							   ),
 
 	[_DEF] = LAYOUT_split_3x5_2(
@@ -208,9 +208,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 				   &os_alt_state, KC_LALT, OS_ALT,
 				   keycode, record
 				   );
-        update_oneshot(            &os_ralt_state, KC_RALT, OS_RALT,
-                                   keycode, record
-                                   );
 	update_oneshot(
 				   &os_cmd_state, KC_LCMD, OS_CMD,
 				   keycode, record
@@ -237,6 +234,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
                               return false;        // Return false to ignore further processing of key
                         }
                         break;
+                default:
+                          update_oneshot(&os_ralt_state, KC_RALT, OS_RALT,
+                                         keycode, record);
+
 
 	}
 

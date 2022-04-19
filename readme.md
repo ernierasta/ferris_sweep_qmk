@@ -23,11 +23,20 @@ or if main site is still in "emergency mode", here is backup:
 Quickstart
 ----------
 
-```
+```bash
 ./setup
-qmk compile -kb ferris/sweep -km ernierasta
+qmk flash -kb ferris/sweep -km ernierasta
 
 ```
+To generate layout images:
+```bash
+./ernierasta/update-keymap-diagram.py
+```
+You will get svg image(-s) with keys in foreignObject. This is problematic
+for some tools (inkscape, imagemagick, rsvg-convert, ...), so if you want
+to get some kind of bitmap image, use browser to generate this. F.e. firefox
+with [SVG Export](https://addons.mozilla.org/pl/firefox/addon/svg-export/) works
+good, but unfortunatelly no automation this time ...
 
 Files & logic
 -------------

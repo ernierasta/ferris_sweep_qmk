@@ -316,7 +316,7 @@ for led_row_match in led_row_matches:
 
 # Create substitution mappings
 layer_names = {
-  "_BKL": "Base - BEAKL27",
+  "_KLW": "Base - KLAWA",
   "_DEF": "QWERTY",
   "_NUM": "Numbers",
   "_SYM": "Symbols",
@@ -351,6 +351,7 @@ key_names = {
     "LHLF": {"label": "Resize left", "title": ""},
     "RHLF": {"label": "Resize right", "title": ""},
     "FULL": {"label": "Resize full", "title": ""},
+    "RSFT_TRALT": {"label": "Shift + Tap RALT", "title": ""},
     "OS_SHFT": {"label": "&#8679;", "title": "Shift"},
     "OS_CTRL": {"label": "&#94;", "title": "Control"},
     "OS_ALT": {"label": "&#8997;", "title": "Option"},

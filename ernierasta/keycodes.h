@@ -42,7 +42,7 @@
 #define PMIN LALT(KC_PLUS) // plus/minus symbol
 
 enum layers {
-	_BKL,
+	_KLW,
 	_DEF,
 	_NUM,
 	_SYM,
