@@ -8,7 +8,7 @@
 // Layer keys
 #define NUM OSL(_NUM)
 #define SYM OSL(_SYM)
-#define RSFT_TRALT RSFT_T(OSM(MOD_RALT)) // Shift held, OS RAlt tapped (intercepted in _user) 
+#define RSFT_TRALT RSFT_T(OS_RALT) // Shift held, OS RAlt tapped (intercepted in _user) 
 #define WNAV MO(_WNAV) // Workspace navigation and media
 #define FUN MO(_FUN) // Fkeys and mods only
 #define NAV_SPC LT(_NAV, KC_SPC)
@@ -56,6 +56,7 @@ enum keycodes {
 	OS_SHFT = SAFE_RANGE,
 	OS_CTRL,
 	OS_ALT,
+        OS_RALT,
 	OS_CMD,
 
 	NUMWORD,

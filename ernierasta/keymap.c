@@ -171,6 +171,7 @@ bool is_oneshot_ignored_key(uint16_t keycode) {
     case OS_SHFT:
     case OS_CTRL:
     case OS_ALT:
+    case OS_RALT:
     case OS_CMD:
         return true;
     default:
@@ -183,6 +184,7 @@ bool sw_app_active = false;
 oneshot_state os_shft_state = os_up_unqueued;
 oneshot_state os_ctrl_state = os_up_unqueued;
 oneshot_state os_alt_state = os_up_unqueued;
+oneshot_state os_ralt_state = os_up_unqueued;
 oneshot_state os_cmd_state = os_up_unqueued;
 
 
@@ -206,6 +208,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 				   &os_alt_state, KC_LALT, OS_ALT,
 				   keycode, record
 				   );
+        update_oneshot(            &os_ralt_state, KC_RALT, OS_RALT,
+                                   keycode, record
+                                   );
 	update_oneshot(
 				   &os_cmd_state, KC_LCMD, OS_CMD,
 				   keycode, record
@@ -223,9 +228,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 
                 // support sending oneshot RAlt, the only code needed is in this case statement
                 case RSFT_TRALT:
-                        if (record->tap.count && record->event.pressed) {
-                                tap_code16(OSM(MOD_RALT)); // Send one-shot RAlt on tap
-                                return false;        // Return false to ignore further processing of key
+                        //if (record->tap.count && record->event.pressed) {
+                        if (record->tap.count) {
+                              // there must be a better way ... but this works ;-)
+                              update_oneshot(&os_ralt_state, KC_RALT, OS_RALT,
+                                   OS_RALT, record);
+                               
+                              return false;        // Return false to ignore further processing of key
                         }
                         break;
 
