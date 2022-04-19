@@ -8,7 +8,7 @@ Modifying it to my taste was easy.
 
 Thank you BSAG! I recommend her blog it is really pleasure to read!
 
-[https://www.rousette.org.uk/](but she's a girl...)
+[but she's a girl...](https://www.rousette.org.uk/)
 
 In this readme you will find all kind of notes, they can be usefull
 if you want to fork repo, but aspecialy for me in the future.
@@ -16,9 +16,9 @@ if you want to fork repo, but aspecialy for me in the future.
 BTW: If you are wondering what layout it is - it is klawa. It is 
 layout optimized for polish language. If you are interested you can
 find more on:
-[http://klawa.pl/](klawa.pl)
+[klawa.pl](http://klawa.pl)
 or if main site is still in "emergency mode", here is backup:
-[https://klawa.zori.pl](My klawa.pl restored site)
+[My klawa.pl restored site](https://klawa.zori.pl)
 
 Quickstart
 ----------
@@ -57,13 +57,13 @@ which setup now, I'm afraid. I'm happy to include a link if someone recognises
 it.
 
 * ernierasta
-This is a keymap for a 34 key [https://github.com/davidphilipbarr/Sweep](Ferris Sweep
-v2.1) which is a super-compact 3x5+2 Kailh Choc keyboard. I've taken inspiration
+This is a keymap for a 34 key [Ferris Sweep v2.1](https://github.com/davidphilipbarr/Sweep) 
+which is a super-compact 3x5+2 Kailh Choc keyboard. I've taken inspiration
 from a lot of other users' keymaps:
 
-- One-shot mods and single key app switching from [https://github.com/callum-oakley/qmk_firmware/tree/master/users/callum](callum)
-- [https://github.com/treeman/qmk_firmware/tree/master/keyboards/splitkb/kyria/keymaps/treeman](Layer arrangement) and 'numword' setup from [https://www.jonashietala.se/blog/2021/06/03/the-t-34-keyboard-layout/#base-layer](Jonas Hietala)
-- 'capsword' setup from [https://getreuer.info/posts/keyboards/caps-word/index.html](Pascal Getreuer)
+- One-shot mods and single key app switching from [callum](https://github.com/callum-oakley/qmk_firmware/tree/master/users/callum)
+- [Layer arrangement](https://github.com/treeman/qmk_firmware/tree/master/keyboards/splitkb/kyria/keymaps/treeman) and 'numword' setup from [Jonas Hietala](https://www.jonashietala.se/blog/2021/06/03/the-t-34-keyboard-layout/#base-layer)
+- 'capsword' setup from [Pascal Getreuer](https://getreuer.info/posts/keyboards/caps-word/index.html)
 <!-- - 'shift|ralt' tap dance inspired by [https://www.reddit.com/r/MechanicalKeyboards/comments/aq5a3c/qmk_tap_dancing_and_oneshot_layers_quick_demo/](Mikeybox (yt: Walker's Keyboard Science), his keymap is [https://github.com/walkerstop/qmk_firmware/blob/fanoe/keyboards/wheatfield/blocked65/keymaps/walker/keymap.c](here) -->
 
 ...and probably many others that I've forgotten about.
