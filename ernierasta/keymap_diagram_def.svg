@@ -259,7 +259,7 @@
 </foreignObject>
 
 <foreignObject x="671" y="73" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_QUOT" class="kc_quot"><div class="glyph">'</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_SCLN" class="kc_scln"><div class="glyph">;</div></div>
 </foreignObject>
 
 <foreignObject x="14" y="132" width="65" height="55" class="text-container">
@@ -311,7 +311,7 @@
 </foreignObject>
 
 <foreignObject x="395" y="211" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Shift (KC_LSFT)" class="kc_lsft"><div class="glyph">&#8679;</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="RSFT_TRALT" class="rsft_tralt"><div class="glyph">Shift + Tap RALT</div></div>
 </foreignObject>
 
 <foreignObject x="464" y="211" width="65" height="55" class="text-container">

@@ -8,20 +8,19 @@
 #include "keycodes.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+
+	[_DEF] = LAYOUT_split_3x5_2(
+			KC_Q, KC_W, KC_E, KC_R, KC_T,    KC_Y, KC_U, KC_I,    KC_O,   KC_P,
+			KC_A, KC_S, KC_D, KC_F, KC_G,    KC_H, KC_J, KC_K,    KC_L,   KC_SCLN,
+			KC_Z, KC_X, KC_C, KC_V, KC_B,    KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH,
+			                NUM, NAV_SPC,    RSFT_TRALT, SYM
+							   ),
 	[_KLW] = LAYOUT_split_3x5_2(
-			KC_F,  KC_U, KC_L, KC_P, KC_D,     KC_H, KC_K, KC_T,    KC_Y,   KC_COLN,
+			KC_F,  KC_U, KC_L, KC_P, KC_D,     KC_H, KC_K, KC_T,    KC_Y,   KC_SCLN,
 			KC_A,  KC_E, KC_S, KC_N, KC_M,     KC_J, KC_R, KC_Z,    KC_O,   KC_I,
 			KC_V,  KC_X, KC_C, KC_G, KC_Q,     KC_B, KC_W, KC_COMM, KC_DOT, KC_SLSH,
 					 NUM, NAV_SPC,     RSFT_TRALT, SYM
 							   ),
-
-	[_DEF] = LAYOUT_split_3x5_2(
-			KC_Q, KC_W, KC_E, KC_R, KC_T,    KC_Y, KC_U, KC_I,    KC_O,   KC_P,
-			KC_A, KC_S, KC_D, KC_F, KC_G,    KC_H, KC_J, KC_K,    KC_L,   KC_QUOT,
-			KC_Z, KC_X, KC_C, KC_V, KC_B,    KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH,
-			                NUM, NAV_SPC,    KC_LSFT, SYM
-							   ),
-
 	[_NUM] = LAYOUT_split_3x5_2(
 			KC_NO,   KC_NO,   KC_NO,  KC_NO,    KC_PERC,   KC_PLUS, KC_7, KC_8, KC_9, KC_MINS,
 			OS_SHFT, OS_CTRL, OS_ALT, OS_CMD,   KC_EQL,    KC_DOT,  KC_4, KC_5, KC_6, KC_COLN,
@@ -38,8 +37,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 	[_NAV] = LAYOUT_split_3x5_2(
-			SW_APP,  KC_NO,   TAB_L,  TAB_R,  KC_TAB,     KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_DEL,
-			OS_SHFT, OS_CTRL, OS_ALT, OS_CMD, KC_ESC,    KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_NO,
+			SW_APP,  KC_NO,   TAB_L,  TAB_R,  KC_TAB,    KC_DEL, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
+			OS_SHFT, OS_CTRL, OS_ALT, OS_CMD, KC_ESC,    KC_INS, KC_LEFT, KC_DOWN, KC_UP,  KC_RGHT,
 			M_UNDO,  M_CUT,   M_COPY, M_PSTE, M_SAVE,    KC_NO,   ALF,     KC_NO,   KC_NO,   KC_BSPC,
 			                          KC_TRNS, KC_TRNS,  WNAV, KC_TRNS
 							   ),
