@@ -227,7 +227,7 @@
 </foreignObject>
 
 <foreignObject x="83" y="73" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_SCLN" class="kc_scln"><div class="glyph">;</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_QUOT" class="kc_quot"><div class="glyph">'</div></div>
 </foreignObject>
 
 <foreignObject x="152" y="73" width="65" height="55" class="text-container">
@@ -235,7 +235,7 @@
 </foreignObject>
 
 <foreignObject x="221" y="73" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_COLN" class="kc_coln"><div class="glyph">&#58;</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_DQUO" class="kc_dquo"><div class="glyph">DQUO</div></div>
 </foreignObject>
 
 <foreignObject x="290" y="73" width="65" height="55" class="text-container">
