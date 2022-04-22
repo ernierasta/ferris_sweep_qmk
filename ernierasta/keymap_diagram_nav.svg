@@ -203,23 +203,23 @@
 </foreignObject>
 
 <foreignObject x="395" y="14" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_HOME" class="kc_home"><div class="glyph">Home</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_DEL" class="kc_del"><div class="glyph">Del</div></div>
 </foreignObject>
 
 <foreignObject x="464" y="14" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Page Down (KC_PGDN)" class="kc_pgdn"><div class="glyph">&#8671;</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_HOME" class="kc_home"><div class="glyph">Home</div></div>
 </foreignObject>
 
 <foreignObject x="533" y="14" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Page Up (KC_PGUP)" class="kc_pgup"><div class="glyph">&#8670;</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Page Down (KC_PGDN)" class="kc_pgdn"><div class="glyph">&#8671;</div></div>
 </foreignObject>
 
 <foreignObject x="602" y="14" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_END" class="kc_end"><div class="glyph">End</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Page Up (KC_PGUP)" class="kc_pgup"><div class="glyph">&#8670;</div></div>
 </foreignObject>
 
 <foreignObject x="671" y="14" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_DEL" class="kc_del"><div class="glyph">Del</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_END" class="kc_end"><div class="glyph">End</div></div>
 </foreignObject>
 
 <foreignObject x="14" y="73" width="65" height="55" class="text-container">
@@ -243,23 +243,23 @@
 </foreignObject>
 
 <foreignObject x="395" y="73" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Left (KC_LEFT)" class="kc_left"><div class="glyph">&#9664;</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_INS" class="kc_ins"><div class="glyph">INS</div></div>
 </foreignObject>
 
 <foreignObject x="464" y="73" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Down (KC_DOWN)" class="kc_down"><div class="glyph">&#9660;</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Left (KC_LEFT)" class="kc_left"><div class="glyph">&#9664;</div></div>
 </foreignObject>
 
 <foreignObject x="533" y="73" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Up (KC_UP)" class="kc_up"><div class="glyph">&#9650;</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Down (KC_DOWN)" class="kc_down"><div class="glyph">&#9660;</div></div>
 </foreignObject>
 
 <foreignObject x="602" y="73" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Right (KC_RGHT)" class="kc_rght"><div class="glyph">&#9654;</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Up (KC_UP)" class="kc_up"><div class="glyph">&#9650;</div></div>
 </foreignObject>
 
 <foreignObject x="671" y="73" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_NO" class="kc_no"><div class="glyph"></div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Right (KC_RGHT)" class="kc_rght"><div class="glyph">&#9654;</div></div>
 </foreignObject>
 
 <foreignObject x="14" y="132" width="65" height="55" class="text-container">

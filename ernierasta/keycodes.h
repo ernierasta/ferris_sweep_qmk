@@ -7,8 +7,9 @@
 
 // Layer keys
 #define NUM OSL(_NUM)
-#define SYM OSL(_SYM)
-#define RSFT_TRALT RSFT_T(OS_RALT) // Shift held, OS RAlt tapped (intercepted in _user) 
+//#define SYM OSL(_SYM)
+#define SYM LT(OS_SYM, KC_BSPC) // OS SYM Switch on hold, Backspace on tap (intercepted in process_record_user)
+#define RSFT_TRALT RSFT_T(OS_RALT) // Shift held, OS RAlt tapped (intercepted in process_record_user) 
 #define WNAV MO(_WNAV) // Workspace navigation and media
 #define FUN MO(_FUN) // Fkeys and mods only
 #define NAV_SPC LT(_NAV, KC_SPC)
@@ -58,6 +59,7 @@ enum keycodes {
 	OS_ALT,
         OS_RALT,
 	OS_CMD,
+        OS_SYM,
 
 	NUMWORD,
 

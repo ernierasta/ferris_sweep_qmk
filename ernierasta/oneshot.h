@@ -18,7 +18,8 @@ void update_oneshot(
     uint16_t mod,
     uint16_t trigger,
     uint16_t keycode,
-    keyrecord_t *record
+    keyrecord_t *record,
+    bool isLayerSwitch
 );
 
 // To be implemented by the consumer. Defines keys to cancel oneshot mods.

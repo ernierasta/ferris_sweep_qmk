@@ -30,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[_SYM] = LAYOUT_split_3x5_2(
 			KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,     GBPD,  KC_AMPR, KC_ASTR, KC_UNDS, KC_MINS,
-			KC_PIPE, KC_SCLN, KC_EQL, KC_COLN,  KC_TILD,     KC_NO, OS_CMD,  OS_ALT,  OS_CTRL, OS_SHFT,
+			KC_PIPE, KC_QUOT, KC_EQL, KC_DQUO,  KC_TILD,     KC_NO, OS_CMD,  OS_ALT,  OS_CTRL, OS_SHFT,
 			KC_LT,   KC_GT,   KC_NO,  KC_NO,    KC_GRV,      KC_NO, PMIN,    KC_CIRC, KC_PLUS, KC_BSLS,
 			                           FUN,     KC_TRNS,     KC_TRNS, KC_TRNS
 								),
@@ -67,6 +67,13 @@ enum combo_events {
   DEL_COMBO_Q,
   CTRLC_COMBO_Q,
   ESC_COMBO_Q,
+  // braces
+  LCBR_COMBO_Q,
+  LPRN_COMBO_Q,
+  LBRC_COMBO_Q,
+  RCBR_COMBO_Q,
+  RPRN_COMBO_Q,
+  RBRC_COMBO_Q,
   // beakl layer combos
   CAPS_COMBO_B,
   ENTER_COMBO_B,
@@ -108,6 +115,14 @@ const uint16_t PROGMEM lbrc_combo_b[] = {KC_X, KC_DOT, COMBO_END};
 const uint16_t PROGMEM rcbr_combo_b[] = {KC_M, KC_T, COMBO_END};
 const uint16_t PROGMEM rprn_combo_b[] = {KC_C, KC_S, COMBO_END};
 const uint16_t PROGMEM rbrc_combo_b[] = {KC_G, KC_D, COMBO_END};
+// braces qwerty
+const uint16_t PROGMEM lcbr_combo_q[] = {KC_D, KC_E, COMBO_END};
+const uint16_t PROGMEM lprn_combo_q[] = {KC_F, KC_R, COMBO_END};
+const uint16_t PROGMEM lbrc_combo_q[] = {KC_T, KC_G, COMBO_END};
+const uint16_t PROGMEM rcbr_combo_q[] = {KC_I, KC_K, COMBO_END};
+const uint16_t PROGMEM rprn_combo_q[] = {KC_U, KC_J, COMBO_END};
+const uint16_t PROGMEM rbrc_combo_q[] = {KC_Y, KC_H, COMBO_END};
+
 // Ctrl-c combo mostly for Emacs
 const uint16_t PROGMEM ctrlc_combo_b[] = {KC_S, KC_T, KC_N, COMBO_END};
 const uint16_t PROGMEM esc_combo_b[] = {KC_I, KC_E, KC_A, COMBO_END};
@@ -120,6 +135,12 @@ combo_t key_combos[] = {
   [DEL_COMBO_Q] = COMBO(del_combo_q, KC_DEL),
   [CTRLC_COMBO_Q] = COMBO(ctrlc_combo_q, LCTL(KC_C)),
   [ESC_COMBO_Q] = COMBO(esc_combo_q, KC_ESC),
+  [LCBR_COMBO_Q] = COMBO(lcbr_combo_q, KC_LCBR),
+  [LPRN_COMBO_Q] = COMBO(lprn_combo_q, KC_LPRN),
+  [LBRC_COMBO_Q] = COMBO(lbrc_combo_q, KC_LBRC),
+  [RCBR_COMBO_Q] = COMBO(rcbr_combo_q, KC_RCBR),
+  [RPRN_COMBO_Q] = COMBO(rprn_combo_q, KC_RPRN),
+  [RBRC_COMBO_Q] = COMBO(rbrc_combo_q, KC_RBRC),
   // Other combos...
   [CAPS_COMBO_B] = COMBO_ACTION(caps_combo_b),
   [ENTER_COMBO_B] = COMBO(enter_combo_b, KC_ENT),
@@ -155,6 +176,7 @@ bool is_oneshot_cancel_key(uint16_t keycode) {
 	case CLEAR:
     case NUM:
     case SYM:
+    case KC_BSPC:
         return true;
     default:
         return false;
@@ -171,6 +193,7 @@ bool is_oneshot_ignored_key(uint16_t keycode) {
     case OS_CTRL:
     case OS_ALT:
     case OS_RALT:
+    case OS_SYM:
     case OS_CMD:
         return true;
     default:
@@ -185,6 +208,7 @@ oneshot_state os_ctrl_state = os_up_unqueued;
 oneshot_state os_alt_state = os_up_unqueued;
 oneshot_state os_ralt_state = os_up_unqueued;
 oneshot_state os_cmd_state = os_up_unqueued;
+oneshot_state os_sym_state = os_up_unqueued;
 
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
@@ -197,19 +221,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 
 	update_oneshot(
 				   &os_shft_state, KC_LSFT, OS_SHFT,
-				   keycode, record
+				   keycode, record, false
 				   );
 	update_oneshot(
 				   &os_ctrl_state, KC_LCTL, OS_CTRL,
-				   keycode, record
+				   keycode, record, false
 				   );
 	update_oneshot(
 				   &os_alt_state, KC_LALT, OS_ALT,
-				   keycode, record
+				   keycode, record, false
 				   );
 	update_oneshot(
 				   &os_cmd_state, KC_LCMD, OS_CMD,
-				   keycode, record
+				   keycode, record, false
 				   );
 
 	switch (keycode) {
@@ -219,25 +243,39 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 			if (get_oneshot_layer() != 0) {
 				clear_oneshot_layer_state(ONESHOT_OTHER_KEY_PRESSED);
 			}
-			layer_move(_DEF);
+			layer_move(_KLW);
 			return false;
 
                 // support sending oneshot RAlt, the only code needed is in this case statement
                 case RSFT_TRALT:
-                        //if (record->tap.count && record->event.pressed) {
                         if (record->tap.count) {
                               // there must be a better way ... but this works ;-)
                               update_oneshot(&os_ralt_state, KC_RALT, OS_RALT,
-                                   OS_RALT, record);
-                               
+                                   OS_RALT, record, false);
                               return false;        // Return false to ignore further processing of key
+                        }
+                        break;
+                // enable oneshot layer switch on hold
+                case SYM:
+                        if (!record->tap.count) {
+                            update_oneshot(&os_sym_state, _SYM, OS_SYM,
+                                   OS_SYM, record, true);
+                            return false;
+                        } else {
+                            if (record->tap.count > 1 && record->event.pressed) { // tap & hold
+                                register_code(KC_BSPC);
+                                return false;
+                            } else if (record->tap.count > 1) {
+                                unregister_code(KC_BSPC);
+                                return false;
+                            }
                         }
                         break;
                 default:
                           update_oneshot(&os_ralt_state, KC_RALT, OS_RALT,
-                                         keycode, record);
-
-
+                                         keycode, record, false);
+                          update_oneshot(&os_sym_state, _SYM, OS_SYM,
+                                         keycode, record, true);
 	}
 
 	return true;

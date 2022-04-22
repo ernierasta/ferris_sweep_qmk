@@ -1,17 +1,24 @@
 #include "oneshot.h"
 
+// update_oneshot manages oneshot logic
+// if isLayerSwitch is true, 
 void update_oneshot(
     oneshot_state *state,
     uint16_t mod,
     uint16_t trigger,
     uint16_t keycode,
-    keyrecord_t *record
+    keyrecord_t *record,
+    bool isLayerSwitch
 ) {
     if (keycode == trigger) {
         if (record->event.pressed) {
             // Trigger keydown
             if (*state == os_up_unqueued) {
-                register_code(mod);
+                if (isLayerSwitch) { // support for layer switch
+                    layer_on(mod);
+                } else {
+                    register_code(mod);
+                }
             }
             *state = os_down_unused;
         } else {
@@ -24,7 +31,11 @@ void update_oneshot(
             case os_down_used:
                 // If we did use the mod while trigger was held, unregister it.
                 *state = os_up_unqueued;
-                unregister_code(mod);
+                if (isLayerSwitch) {
+                    layer_off(mod);
+                } else {
+                    unregister_code(mod);
+                }
                 break;
             default:
                 break;
@@ -46,7 +57,11 @@ void update_oneshot(
                     break;
                 case os_up_queued:
                     *state = os_up_unqueued;
+                if (isLayerSwitch) {
+                    layer_off(mod);
+                } else {
                     unregister_code(mod);
+                }
                     break;
                 default:
                     break;
