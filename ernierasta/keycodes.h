@@ -16,28 +16,44 @@
 
 // shortcuts
 #define M_UNDO G(KC_Z)
-#define M_CUT G(KC_X)
-#define M_COPY G(KC_C)
-#define M_PSTE G(KC_V)
-#define M_SAVE G(KC_S)
-#define TAB_L G(S(KC_LBRC))
-#define TAB_R G(S(KC_RBRC))
+#define M_CUT C(KC_X)
+#define M_COPY C(KC_C)
+#define M_PSTE C(KC_V)
+#define M_SAVE C(KC_S)
+#define TAB_L C(S(KC_LBRC))
+#define TAB_R C(S(KC_RBRC))
 #define ALF LGUI(KC_SPC)
 #define HOOK HYPR(KC_H)
 // window resizing shortcuts
 // left, right, full
-#define LHLF HYPR(KC_J)
-#define RHLF HYPR(KC_L)
-#define FULL HYPR(KC_K)
 // workspace shortcuts
-#define W1 HYPR(KC_1)
-#define W2 HYPR(KC_2)
-#define W3 HYPR(KC_3)
-#define W4 HYPR(KC_4)
-#define W5 HYPR(KC_5)
-#define W6 HYPR(KC_6)
-// to qwerty layer
-#define TG_QWTY TG(_DEF)
+#define W1 LALT(KC_Q)
+#define W2 LALT(KC_W)
+#define W3 LALT(KC_E)
+#define W4 LALT(KC_R)
+#define W5 LALT(KC_T)
+#define W6 LALT(KC_Y)
+#define W7 LALT(KC_U)
+#define W8 LALT(KC_I)
+#define W9 LALT(KC_O)
+#define W10 LALT(KC_P)
+// windows manipulation - swaywm
+#define WLEFT LALT(KC_J)
+#define WDOWN LALT(KC_K)
+#define WUP LALT(KC_L)
+#define WRIGHT LALT(KC_SCLN)
+// move windows
+#define MWLEFT LSA(KC_J)
+#define MWDOWN LSA(KC_K)
+#define MWUP LSA(KC_L)
+#define MWRIGHT LSA(KC_SCLN)
+// arrange & run
+#define RUNAPP A(KC_ENT) 
+#define KILLAPP LSA(KC_A)
+#define FULLSCN A(KC_A)
+// to klawa layer
+
+#define TG_QWTY TG(_KLW)
 // awkward symbols to type
 #define GBPD LALT(KC_3) // UK pound sign
 #define PMIN LALT(KC_PLUS) // plus/minus symbol

@@ -44,10 +44,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 							   ),
 
 	[_WNAV] = LAYOUT_split_3x5_2(
-      RESET,    KC_VOLD, KC_MUTE, KC_VOLU, KC_NO,     HOOK,   LHLF,  FULL,  RHLF,  KC_NO,
-			KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,     KC_NO,  W4,    W5,    W6,    KC_NO,
-			TG_QWTY,  KC_MPRV, KC_MPLY, KC_MNXT, KC_NO,     KC_NO,  W1,    W2,    W3,    KC_NO,
-			                          KC_TRNS,  KC_TRNS,    KC_TRNS,  KC_TRNS
+      W1,      W2,      W3,      W4,      W5,        W6,      W7,    W8,    W9,  W10,
+      MWLEFT,  MWUP,    MWDOWN,  MWRIGHT, RUNAPP,    KILLAPP, WLEFT, WDOWN,  WUP,  WRIGHT,
+      TG_QWTY, KC_MPRV, FULLSCN, RUNAPP,  KC_NO,     KC_NO,  KILLAPP,    W2,    W3,    KC_NO,
+			        KC_TRNS,  KC_TRNS,    KC_TRNS,  KC_TRNS
 								),
 
 	[_FUN] = LAYOUT_split_3x5_2(
@@ -200,6 +200,29 @@ bool is_oneshot_ignored_key(uint16_t keycode) {
         return false;
     }
 }
+
+// customize capsword, add ; as ignored (creates problem with SW klawa)
+bool caps_word_press_user(uint16_t keycode) {
+  switch (keycode) {
+    // Keycodes that continue Caps Word, with shift applied.
+    case KC_A ... KC_Z:
+      add_weak_mods(MOD_BIT(KC_LSFT));  // Apply shift to the next key.
+      return true;
+
+    // Keycodes that continue Caps Word, without shifting.
+    case KC_1 ... KC_0:
+    case KC_BSPC:
+    case KC_MINS:
+    case KC_UNDS:
+    case KC_SCLN:
+      return true;
+
+    default:
+      return false;  // Deactivate Caps Word.
+  }
+}
+
+
 
 bool sw_app_active = false;
 
