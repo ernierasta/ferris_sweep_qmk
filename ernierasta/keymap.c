@@ -39,15 +39,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_NAV] = LAYOUT_split_3x5_2(
 			SW_APP,  KC_NO,   TAB_L,  TAB_R,  KC_TAB,    KC_DEL, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
 			OS_SHFT, OS_CTRL, OS_ALT, OS_CMD, KC_ESC,    KC_INS, KC_LEFT, KC_DOWN, KC_UP,  KC_RGHT,
-			M_UNDO,  M_CUT,   M_COPY, M_PSTE, M_SAVE,    KC_NO,   ALF,     KC_NO,   KC_NO,   KC_BSPC,
+			M_UNDO,  M_CUT,   M_COPY, M_PSTE, M_SAVE,    KC_NO,  KC_ESC,  KC_NO,   KC_NO,   KC_BSPC,
 			                          KC_TRNS, KC_TRNS,  WNAV, KC_TRNS
 							   ),
 
 	[_WNAV] = LAYOUT_split_3x5_2(
-      W1,      W2,      W3,      W4,      W5,        W6,      W7,    W8,    W9,  W10,
-      MWLEFT,  MWUP,    MWDOWN,  MWRIGHT, RUNAPP,    KILLAPP, WLEFT, WDOWN,  WUP,  WRIGHT,
-      TG_QWTY, KC_MPRV, FULLSCN, RUNAPP,  KC_NO,     KC_NO,  KILLAPP,    W2,    W3,    KC_NO,
-			        KC_TRNS,  KC_TRNS,    KC_TRNS,  KC_TRNS
+      W1,      W2,      W3,      W4,      W5,        W6,      W7,      W8,     W9,     W10,
+      MWLEFT,  MWUP,    MWDOWN,  MWRIGHT, RUNAPP,    KC_NO,   WLEFT,   WDOWN,  WUP,    WRIGHT,
+      TG_QWTY, ARRANGE, FULLSCN, RUNTERM, KC_LSFT,   KC_RSFT, KILLAPP, SCRPAD, RUNAPP, KC_NO,
+			        KC_TRNS,  KC_TRNS,   KC_TRNS, KC_TRNS
 								),
 
 	[_FUN] = LAYOUT_split_3x5_2(
@@ -205,6 +205,7 @@ bool is_oneshot_ignored_key(uint16_t keycode) {
 bool caps_word_press_user(uint16_t keycode) {
   switch (keycode) {
     // Keycodes that continue Caps Word, with shift applied.
+    case KC_SCLN:
     case KC_A ... KC_Z:
       add_weak_mods(MOD_BIT(KC_LSFT));  // Apply shift to the next key.
       return true;
@@ -214,7 +215,6 @@ bool caps_word_press_user(uint16_t keycode) {
     case KC_BSPC:
     case KC_MINS:
     case KC_UNDS:
-    case KC_SCLN:
       return true;
 
     default:

@@ -48,9 +48,12 @@
 #define MWUP LSA(KC_L)
 #define MWRIGHT LSA(KC_SCLN)
 // arrange & run
-#define RUNAPP A(KC_ENT) 
+#define RUNAPP A(KC_F) 
+#define RUNTERM A(KC_ENT) 
 #define KILLAPP LSA(KC_A)
 #define FULLSCN A(KC_A)
+#define ARRANGE A(KC_D)
+#define SCRPAD A(KC_S)
 // to klawa layer
 
 #define TG_QWTY TG(_KLW)
