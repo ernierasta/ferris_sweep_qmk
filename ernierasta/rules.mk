@@ -1,4 +1,4 @@
-MOUSEKEY_ENABLE     = no     # Mouse keys
+MOUSEKEY_ENABLE     = yes     # Mouse keys
 RGB_MATRIX_ENABLE   = no
 LTO_ENABLE          = yes
 COMBO_ENABLE        = yes

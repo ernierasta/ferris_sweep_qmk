@@ -23,14 +23,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 							   ),
 	[_NUM] = LAYOUT_split_3x5_2(
 			KC_NO,   KC_NO,   KC_NO,  KC_NO,    KC_PERC,   KC_PLUS, KC_7, KC_8, KC_9, KC_MINS,
-			OS_SHFT, OS_CTRL, OS_ALT, OS_CMD,   KC_EQL,    KC_DOT,  KC_4, KC_5, KC_6, KC_COLN,
+			OS_SHFT, OS_CMD, OS_ALT, OS_CTRL,   KC_EQL,    KC_DOT,  KC_4, KC_5, KC_6, RSFT(KC_P),
 			KC_NO,   KC_NO,   KC_NO,  KC_NO,    KC_UNDS,   KC_ASTR, KC_1, KC_2, KC_3, KC_SLSH,
 			                        KC_TRNS,    KC_TRNS,   KC_0, FUN
 								),
 
 	[_SYM] = LAYOUT_split_3x5_2(
 			KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,     GBPD,  KC_AMPR, KC_ASTR, KC_UNDS, KC_MINS,
-			KC_PIPE, KC_QUOT, KC_EQL, KC_DQUO,  KC_TILD,     KC_NO, OS_CMD,  OS_ALT,  OS_CTRL, OS_SHFT,
+			KC_PIPE, KC_QUOT, KC_EQL, KC_DQUO,  KC_TILD,     KC_NO, OS_CTRL,  OS_ALT,  OS_CMD, OS_SHFT,
 			KC_LT,   KC_GT,   KC_NO,  KC_NO,    KC_GRV,      KC_NO, PMIN,    KC_CIRC, KC_PLUS, KC_BSLS,
 			                           FUN,     KC_TRNS,     KC_TRNS, KC_TRNS
 								),
@@ -38,9 +38,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[_NAV] = LAYOUT_split_3x5_2(
 			SW_APP,  KC_NO,   TAB_L,  TAB_R,  KC_TAB,    KC_DEL, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
-			OS_SHFT, OS_CTRL, OS_ALT, OS_CMD, KC_ESC,    KC_INS, KC_LEFT, KC_DOWN, KC_UP,  KC_RGHT,
-			M_UNDO,  M_CUT,   M_COPY, M_PSTE, M_SAVE,    KC_NO,  KC_ESC,  KC_NO,   KC_NO,   KC_BSPC,
-			                          KC_TRNS, KC_TRNS,  WNAV, KC_TRNS
+			OS_SHFT, OS_CMD, OS_ALT, OS_CTRL, KC_ESC,    KC_INS, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
+			M_UNDO,  M_CUT,   M_COPY, M_PSTE, M_SAVE,    KC_NO,  KC_ESC,  KC_BSPC, KC_DEL,  KC_BSPC,
+			                          KC_TRNS, KC_TRNS,  WNAV, MOUSE
 							   ),
 
 	[_WNAV] = LAYOUT_split_3x5_2(
@@ -55,7 +55,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 			OS_SHFT, OS_CTRL,  OS_ALT,   OS_CMD,   KC_ESC,       KC_F11,  KC_F4, KC_F5, KC_F6, KC_NO,
 			KC_NO,   KC_NO,    KC_NO,    KC_NO,    KC_NO,        KC_F10,  KC_F1, KC_F2, KC_F3, KC_NO,
 			                             KC_TRNS,  KC_TRNS,      KC_TRNS, KC_TRNS
-								)
+								),
+        [_MOUSE] = LAYOUT_split_3x5_2(
+              KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,   KC_NO,      KC_MS_WH_LEFT,      KC_MS_WH_DOWN,KC_MS_WH_UP, KC_MS_WH_RIGHT, 
+              KC_NO, KC_NO,        KC_MS_BTN2,   KC_MS_BTN1,   KC_NO,   KC_MS_BTN1, KC_MS_LEFT, KC_MS_DOWN, KC_MS_UP, KC_MS_RIGHT,
+              KC_NO, KC_MS_ACCEL0, KC_MS_ACCEL1, KC_MS_ACCEL2, KC_NO,   KC_NO,      KC_NO,      KC_NO,      KC_NO,    KC_NO,  
+                                                 KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS
+                                                               )
 };
 
 enum combo_events {
@@ -189,6 +195,8 @@ bool is_oneshot_ignored_key(uint16_t keycode) {
 	case CLEAR:
     case NUM:
     case SYM:
+    case NAV_SPC:
+    case MOUSE:
     case OS_SHFT:
     case OS_CTRL:
     case OS_ALT:

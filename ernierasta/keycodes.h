@@ -12,10 +12,11 @@
 #define RSFT_TRALT RSFT_T(OS_RALT) // Shift held, OS RAlt tapped (intercepted in process_record_user) 
 #define WNAV MO(_WNAV) // Workspace navigation and media
 #define FUN MO(_FUN) // Fkeys and mods only
+#define MOUSE MO(_MOUSE)
 #define NAV_SPC LT(_NAV, KC_SPC)
 
 // shortcuts
-#define M_UNDO G(KC_Z)
+#define M_UNDO C(KC_Z)
 #define M_CUT C(KC_X)
 #define M_COPY C(KC_C)
 #define M_PSTE C(KC_V)
@@ -69,6 +70,7 @@ enum layers {
 	_NAV,
 	_WNAV,
 	_FUN,
+        _MOUSE
 };
 
 enum keycodes {
