@@ -20,9 +20,9 @@
 #define M_CUT C(KC_X)
 #define M_COPY C(KC_C)
 #define M_PSTE C(KC_V)
-#define M_SAVE C(KC_S)
-#define TAB_L C(S(KC_LBRC))
-#define TAB_R C(S(KC_RBRC))
+#define M_SAVE C(KC_D)
+#define TAB_L S(KC_TAB)
+#define TAB_R KC_TAB
 #define ALF LGUI(KC_SPC)
 #define HOOK HYPR(KC_H)
 // window resizing shortcuts

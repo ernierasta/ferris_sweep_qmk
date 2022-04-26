@@ -56,7 +56,7 @@ keycode_transparent = "KC_TRNS"
 transparent_css_class = "transparent" # as above, applied to transparent keys (falling through to base layer; i.e. keycode_transparent above).
 # Note: Transparent keys (on non-base layers) will be labelled identically to the corresponding key on the base layer.
 annotation_keycodes = { # keycodes with annotations
-    "layer": {"keycodes": ["NAV_SPC", "NUM", "SYM", "FUN", "WNAV"],
+    "layer": {"keycodes": ["NAV_SPC", "NUM", "SYM", "FUN", "WNAV", "MOUSE"],
               "label": "layer"},
     "one-shot": {"keycodes": ["OS_SHFT", "OS_CTRL", "OS_ALT", "OS_CMD"],
                  "label": "one-shot"},
@@ -68,7 +68,8 @@ layer_held_keycodes = { # keycodes whose keys are implicitly held down on a give
   "_NUM": ["NUM"],
   "_SYM": ["SYM"],
   "_WNAV": ["KC_LSFT", "NAV_SPC"],
-  "_FUN": ["NUM", "SYM"]
+  "_FUN": ["NUM", "SYM"],
+  "_MOUSE": ["MOUSE"]
 }
 
 # Advanced
@@ -316,13 +317,14 @@ for led_row_match in led_row_matches:
 
 # Create substitution mappings
 layer_names = {
-  "_KLW": "Base - KLAWA",
-  "_DEF": "QWERTY",
+  "_KLW": "KLAWA",
+  "_DEF": "Base - QWERTY",
   "_NUM": "Numbers",
   "_SYM": "Symbols",
   "_NAV": "Navigation &amp; shortcuts",
   "_WNAV": "Workspace navigation",
   "_FUN": "F keys",
+  "_MOUSE": "Mouse movement",
 }
 
 # We'll just strip the keycode_prefix if a keycode isn't found in key_names.
@@ -340,7 +342,7 @@ key_names = {
     "W4": {"label": "W4", "title": ""},
     "W5": {"label": "W5", "title": ""},
     "W6": {"label": "W6", "title": ""},
-    "TG_QWTY": {"label": "To QWERTY", "title": ""},
+    "TG_QWTY": {"label": "To KLAWA", "title": ""},
     "KC_HOME": {"label": "Home", "title": ""},
     "KC_END": {"label": "End", "title": ""},
     "KC_DEL": {"label": "Del", "title": ""},
@@ -370,6 +372,7 @@ key_names = {
     "KC_MPLY": {"label": "&#9199;", "title": "Play/Pause"},
     "KC_MNXT": {"label": "&#9197;", "title": "Next Track"},
     "KC_QUOT": {"label": "'", "title": ""},
+    "KC_DQUO": {"label": "\"", "title": ""},
     "KC_COMM": {"label": ",", "title": ""},
     "KC_DOT": {"label": ".", "title": ""},
     "KC_SLSH": {"label": "/", "title": ""},

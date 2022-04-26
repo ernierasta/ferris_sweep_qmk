@@ -235,7 +235,7 @@
 </foreignObject>
 
 <foreignObject x="221" y="73" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_DQUO" class="kc_dquo"><div class="glyph">DQUO</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_DQUO" class="kc_dquo"><div class="glyph">"</div></div>
 </foreignObject>
 
 <foreignObject x="290" y="73" width="65" height="55" class="text-container">
@@ -247,7 +247,7 @@
 </foreignObject>
 
 <foreignObject x="464" y="73" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Command (OS_CMD)" class="os_cmd"><div class="glyph">Gui</div><div class="annotation one-shot">one-shot</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Control (OS_CTRL)" class="os_ctrl"><div class="glyph">Ctrl</div><div class="annotation one-shot">one-shot</div></div>
 </foreignObject>
 
 <foreignObject x="533" y="73" width="65" height="55" class="text-container">
@@ -255,7 +255,7 @@
 </foreignObject>
 
 <foreignObject x="602" y="73" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Control (OS_CTRL)" class="os_ctrl"><div class="glyph">Ctrl</div><div class="annotation one-shot">one-shot</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Command (OS_CMD)" class="os_cmd"><div class="glyph">Gui</div><div class="annotation one-shot">one-shot</div></div>
 </foreignObject>
 
 <foreignObject x="671" y="73" width="65" height="55" class="text-container">

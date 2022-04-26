@@ -183,7 +183,7 @@
 <rect rx="6" x="10" y="10" class="layer_bg" />
 
 <foreignObject x="14" y="14" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="SW_APP" class="sw_app"><div class="glyph">Switch App</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_NO" class="kc_no"><div class="glyph"></div></div>
 </foreignObject>
 
 <foreignObject x="83" y="14" width="65" height="55" class="text-container">
@@ -191,115 +191,115 @@
 </foreignObject>
 
 <foreignObject x="152" y="14" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="TAB_L" class="tab_l"><div class="glyph">Prev Tab</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_NO" class="kc_no"><div class="glyph"></div></div>
 </foreignObject>
 
 <foreignObject x="221" y="14" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Tab (KC_TAB)" class="kc_tab"><div class="glyph">&#8677;</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_NO" class="kc_no"><div class="glyph"></div></div>
 </foreignObject>
 
 <foreignObject x="290" y="14" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_DEL" class="kc_del"><div class="glyph">Del</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_NO" class="kc_no"><div class="glyph"></div></div>
 </foreignObject>
 
 <foreignObject x="395" y="14" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_DEL" class="kc_del"><div class="glyph">Del</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_NO" class="kc_no"><div class="glyph"></div></div>
 </foreignObject>
 
 <foreignObject x="464" y="14" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_HOME" class="kc_home"><div class="glyph">Home</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_MS_WH_LEFT" class="kc_ms_wh_left"><div class="glyph">MS_WH_LEFT</div></div>
 </foreignObject>
 
 <foreignObject x="533" y="14" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Page Down (KC_PGDN)" class="kc_pgdn"><div class="glyph">&#8671;</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_MS_WH_DOWN" class="kc_ms_wh_down"><div class="glyph">MS_WH_DOWN</div></div>
 </foreignObject>
 
 <foreignObject x="602" y="14" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Page Up (KC_PGUP)" class="kc_pgup"><div class="glyph">&#8670;</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_MS_WH_UP" class="kc_ms_wh_up"><div class="glyph">MS_WH_UP</div></div>
 </foreignObject>
 
 <foreignObject x="671" y="14" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_END" class="kc_end"><div class="glyph">End</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_MS_WH_RIGHT" class="kc_ms_wh_right"><div class="glyph">MS_WH_RIGHT</div></div>
 </foreignObject>
 
 <foreignObject x="14" y="73" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Shift (OS_SHFT)" class="os_shft"><div class="glyph">&#8679;</div><div class="annotation one-shot">one-shot</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_NO" class="kc_no"><div class="glyph"></div></div>
 </foreignObject>
 
 <foreignObject x="83" y="73" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Command (OS_CMD)" class="os_cmd"><div class="glyph">Gui</div><div class="annotation one-shot">one-shot</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_NO" class="kc_no"><div class="glyph"></div></div>
 </foreignObject>
 
 <foreignObject x="152" y="73" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Option (OS_ALT)" class="os_alt"><div class="glyph">Alt</div><div class="annotation one-shot">one-shot</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_MS_BTN2" class="kc_ms_btn2"><div class="glyph">MS_BTN2</div></div>
 </foreignObject>
 
 <foreignObject x="221" y="73" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Control (OS_CTRL)" class="os_ctrl"><div class="glyph">Ctrl</div><div class="annotation one-shot">one-shot</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_MS_BTN1" class="kc_ms_btn1"><div class="glyph">MS_BTN1</div></div>
 </foreignObject>
 
 <foreignObject x="290" y="73" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Escape (KC_ESC)" class="kc_esc"><div class="glyph">&#9099;</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_NO" class="kc_no"><div class="glyph"></div></div>
 </foreignObject>
 
 <foreignObject x="395" y="73" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_INS" class="kc_ins"><div class="glyph">INS</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_MS_BTN1" class="kc_ms_btn1"><div class="glyph">MS_BTN1</div></div>
 </foreignObject>
 
 <foreignObject x="464" y="73" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Left (KC_LEFT)" class="kc_left"><div class="glyph">&#9664;</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_MS_LEFT" class="kc_ms_left"><div class="glyph">MS_LEFT</div></div>
 </foreignObject>
 
 <foreignObject x="533" y="73" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Down (KC_DOWN)" class="kc_down"><div class="glyph">&#9660;</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_MS_DOWN" class="kc_ms_down"><div class="glyph">MS_DOWN</div></div>
 </foreignObject>
 
 <foreignObject x="602" y="73" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Up (KC_UP)" class="kc_up"><div class="glyph">&#9650;</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_MS_UP" class="kc_ms_up"><div class="glyph">MS_UP</div></div>
 </foreignObject>
 
 <foreignObject x="671" y="73" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Right (KC_RGHT)" class="kc_rght"><div class="glyph">&#9654;</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_MS_RIGHT" class="kc_ms_right"><div class="glyph">MS_RIGHT</div></div>
 </foreignObject>
 
 <foreignObject x="14" y="132" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Undo (M_UNDO)" class="m_undo"><div class="glyph">Undo</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_NO" class="kc_no"><div class="glyph"></div></div>
 </foreignObject>
 
 <foreignObject x="83" y="132" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Cut (M_CUT)" class="m_cut"><div class="glyph">Cut</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_MS_ACCEL0" class="kc_ms_accel0"><div class="glyph">MS_ACCEL0</div></div>
 </foreignObject>
 
 <foreignObject x="152" y="132" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="M_COPY" class="m_copy"><div class="glyph">Copy</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_MS_ACCEL1" class="kc_ms_accel1"><div class="glyph">MS_ACCEL1</div></div>
 </foreignObject>
 
 <foreignObject x="221" y="132" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="M_PSTE" class="m_pste"><div class="glyph">Paste</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_MS_ACCEL2" class="kc_ms_accel2"><div class="glyph">MS_ACCEL2</div></div>
 </foreignObject>
 
 <foreignObject x="290" y="132" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Enter (KC_ENT)" class="kc_ent"><div class="glyph">&#9166;</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_NO" class="kc_no"><div class="glyph"></div></div>
 </foreignObject>
 
 <foreignObject x="395" y="132" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="M_SAVE" class="m_save"><div class="glyph">Save</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_NO" class="kc_no"><div class="glyph"></div></div>
 </foreignObject>
 
 <foreignObject x="464" y="132" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Escape (KC_ESC)" class="kc_esc"><div class="glyph">&#9099;</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_NO" class="kc_no"><div class="glyph"></div></div>
 </foreignObject>
 
 <foreignObject x="533" y="132" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Backspace (KC_BSPC)" class="kc_bspc"><div class="glyph">&#9003;</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_NO" class="kc_no"><div class="glyph"></div></div>
 </foreignObject>
 
 <foreignObject x="602" y="132" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_DEL" class="kc_del"><div class="glyph">Del</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_NO" class="kc_no"><div class="glyph"></div></div>
 </foreignObject>
 
 <foreignObject x="671" y="132" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Backspace (KC_BSPC)" class="kc_bspc"><div class="glyph">&#9003;</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_NO" class="kc_no"><div class="glyph"></div></div>
 </foreignObject>
 
 <foreignObject x="221" y="211" width="65" height="55" class="text-container">
@@ -307,15 +307,15 @@
 </foreignObject>
 
 <foreignObject x="290" y="211" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_TRNS" class="transparent held nav_spc"><div class="glyph">&#9251;</div><div class="annotation layer">held</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_TRNS" class="transparent nav_spc"><div class="glyph">&#9251;</div><div class="annotation layer">layer</div></div>
 </foreignObject>
 
 <foreignObject x="395" y="211" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="WNAV" class="wnav"><div class="glyph">Work space</div><div class="annotation layer">layer</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_TRNS" class="transparent rsft_tralt"><div class="glyph">Shift + Tap RALT</div></div>
 </foreignObject>
 
 <foreignObject x="464" y="211" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="MOUSE" class="mouse"><div class="glyph">MOUSE</div><div class="annotation layer">layer</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_TRNS" class="transparent sym"><div class="glyph">Sym</div><div class="annotation layer">layer</div></div>
 </foreignObject>
 
 </svg>
