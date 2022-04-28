@@ -19,8 +19,19 @@ void update_oneshot(
                 } else {
                     register_code(mod);
                 }
+                *state = os_down_unused;
             }
-            *state = os_down_unused;
+            
+            if (is_oneshot_cancel_key(keycode) && *state == os_up_queued) {
+                // Cancel oneshot on designated cancel keydown.
+                *state = os_up_unqueued;
+                if (isLayerSwitch) {
+                    layer_off(mod); 
+                } else {
+                    unregister_code(mod);
+                }
+            }
+
         } else {
             // Trigger keyup
             switch (*state) {
@@ -46,7 +57,11 @@ void update_oneshot(
             if (is_oneshot_cancel_key(keycode) && *state != os_up_unqueued) {
                 // Cancel oneshot on designated cancel keydown.
                 *state = os_up_unqueued;
-                unregister_code(mod);
+                if (isLayerSwitch) {
+                    layer_off(mod);
+                } else {
+                    unregister_code(mod);
+                }
             }
         } else {
             if (!is_oneshot_ignored_key(keycode)) {

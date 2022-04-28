@@ -180,12 +180,14 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
 bool is_oneshot_cancel_key(uint16_t keycode) {
     switch (keycode) {
 	case CLEAR:
-    case NUM:
-    case SYM:
-    case KC_BSPC:
-        return true;
-    default:
-        return false;
+        case NUM:
+        case SYM:
+        case RSFT_TRALT:
+        case OS_RALT:
+        case KC_RALT:
+            return true;
+        default:
+           return false;
     }
 }
 
