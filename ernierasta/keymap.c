@@ -7,13 +7,37 @@
 #include "swapper.h"
 #include "keycodes.h"
 
+// tap dance setup start
+typedef struct {
+  bool is_press_action;
+  int state;
+} tap;
+
+enum {
+  SINGLE_TAP = 1,
+  SINGLE_HOLD = 2,
+  DOUBLE_TAP = 3,
+  DOUBLE_HOLD = 4,
+  DOUBLE_SINGLE_TAP = 5, //send two single taps
+  TRIPLE_TAP = 6,
+  TRIPLE_HOLD = 7
+};
+
+// add all tap dances here
+enum {
+  DANCE_SHIFTRALT = 0
+};
+
+
+// tap dance setup end
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[_DEF] = LAYOUT_split_3x5_2(
 			KC_Q, KC_W, KC_E, KC_R, KC_T,    KC_Y, KC_U, KC_I,    KC_O,   COLON,
 			KC_A, KC_S, KC_D, KC_F, KC_G,    KC_H, KC_J, KC_K,    KC_L,   KC_SCLN,
 			KC_Z, KC_X, KC_C, KC_V, KC_B,    KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH,
-			                NUM, NAV_SPC,    OS_RALT, SYM
+			                NUM, NAV_SPC,    TD(DANCE_SHIFTRALT), SYM
 							   ),
 	[_KLW] = LAYOUT_split_3x5_2(
 			KC_F,  KC_U, KC_L, KC_P, KC_D,     KC_H, KC_K, KC_T,    KC_Y,   KC_SCLN,
@@ -247,7 +271,73 @@ bool caps_word_press_user(uint16_t keycode) {
   }
 }
 
+// tap dance bits
 
+// cur_dance is taken from qmk documentation
+// it is called by every _finished tap dance function
+// it allowes us to use more user-friendly status names
+int cur_dance (qk_tap_dance_state_t *state) {
+  if (state->count == 1) {
+    if (state->interrupted || !state->pressed)  return SINGLE_TAP;
+    //key has not been interrupted, but they key is still held. Means you want to send a 'HOLD'.
+    else return SINGLE_HOLD;
+  }
+  else if (state->count == 2) {
+    /*
+     * DOUBLE_SINGLE_TAP is to distinguish between typing "pepper", and actually wanting a double tap
+     * action when hitting 'pp'. Suggested use case for this return value is when you want to send two
+     * keystrokes of the key, and not the 'double tap' action/macro.
+    */
+    if (state->interrupted) return DOUBLE_SINGLE_TAP;
+    else if (state->pressed) return DOUBLE_HOLD;
+    else return DOUBLE_TAP;
+  }
+  //Assumes no one is trying to type the same letter three times (at least not quickly).
+  //If your tap dance key is 'KC_W', and you want to type "www." quickly - then you will need to add
+  //an exception here to return a 'TRIPLE_SINGLE_TAP', and define that enum just like 'DOUBLE_SINGLE_TAP'
+  if (state->count == 3) {
+    if (state->interrupted || !state->pressed)  return TRIPLE_TAP;
+    else return TRIPLE_HOLD;
+  }
+  else return 8; //magic number. At some point this method will expand to work for more presses
+}
+
+//instanalize an instance of 'tap' for the 'x' tap dance.
+static tap shiftralttap_state = {
+  .is_press_action = true,
+  .state = 0
+};
+
+void shiftralt_finished (qk_tap_dance_state_t *state, void *user_data) {
+  shiftralttap_state.state = cur_dance(state);
+  switch (shiftralttap_state.state) {
+    case SINGLE_TAP: register_code(KC_RALT); break;
+    case SINGLE_HOLD: register_code(KC_RALT); break;
+    case DOUBLE_TAP: register_code(KC_LSFT); break;
+    case DOUBLE_HOLD: register_code(KC_LSFT); break;
+    case DOUBLE_SINGLE_TAP: register_code(KC_RALT); unregister_code(KC_RALT); register_code(KC_RALT);
+    //Last case is for fast typing. Assuming your key is `f`:
+    //For example, when typing the word `buffer`, and you want to make sure that you send `ff` and not `Esc`.
+    //In order to type `ff` when typing fast, the next character will have to be hit within the `TAPPING_TERM`, which by default is 200ms.
+  }
+}
+
+void shiftralt_reset (qk_tap_dance_state_t *state, void *user_data) {
+  switch (shiftralttap_state.state) {
+    case SINGLE_TAP: unregister_code(KC_RALT); break;
+    case SINGLE_HOLD: unregister_code(KC_RALT); break;
+    case DOUBLE_TAP: unregister_code(KC_LSFT); break;
+    case DOUBLE_HOLD: unregister_code(KC_LSFT);
+    case DOUBLE_SINGLE_TAP: unregister_code(KC_RALT);
+  }
+  shiftralttap_state.state = 0;
+}
+
+qk_tap_dance_action_t tap_dance_actions[] = {
+  [DANCE_SHIFTRALT]     = ACTION_TAP_DANCE_FN_ADVANCED(NULL,shiftralt_finished, shiftralt_reset)
+};
+
+// tap dance code end
 
 bool sw_app_active = false;
 

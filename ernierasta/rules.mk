@@ -1,4 +1,5 @@
 MOUSEKEY_ENABLE     = yes     # Mouse keys
+TAP_DANCE_ENABLE    = yes     # Let's dance!
 RGB_MATRIX_ENABLE   = no
 LTO_ENABLE          = yes
 COMBO_ENABLE        = yes
