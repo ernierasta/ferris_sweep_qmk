@@ -315,7 +315,7 @@
 </foreignObject>
 
 <foreignObject x="464" y="211" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="SYM" class="sym"><div class="glyph">Sym</div><div class="annotation layer">layer</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="SYM" class="sym"><div class="glyph">Sym + Tap &#9003;</div><div class="annotation layer">layer</div></div>
 </foreignObject>
 
 </svg>

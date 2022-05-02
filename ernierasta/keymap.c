@@ -10,10 +10,10 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[_DEF] = LAYOUT_split_3x5_2(
-			KC_Q, KC_W, KC_E, KC_R, KC_T,    KC_Y, KC_U, KC_I,    KC_O,   KC_P,
+			KC_Q, KC_W, KC_E, KC_R, KC_T,    KC_Y, KC_U, KC_I,    KC_O,   COLON,
 			KC_A, KC_S, KC_D, KC_F, KC_G,    KC_H, KC_J, KC_K,    KC_L,   KC_SCLN,
 			KC_Z, KC_X, KC_C, KC_V, KC_B,    KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH,
-			                NUM, NAV_SPC,    RSFT_TRALT, SYM
+			                NUM, NAV_SPC,    OS_RALT, SYM
 							   ),
 	[_KLW] = LAYOUT_split_3x5_2(
 			KC_F,  KC_U, KC_L, KC_P, KC_D,     KC_H, KC_K, KC_T,    KC_Y,   KC_SCLN,
@@ -23,14 +23,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 							   ),
 	[_NUM] = LAYOUT_split_3x5_2(
 			KC_NO,   KC_NO,   KC_NO,  KC_NO,  KC_PERC,   KC_PLUS, KC_7, KC_8, KC_9, KC_MINS,
-			OS_SHFT, OS_CMD, OS_ALT, OS_CTRL, KC_EQL,    KC_DOT,  KC_4, KC_5, KC_6, RSFT(KC_P),
+			OS_SHFT, OS_CMD, OS_ALT, OS_CTRL, KC_EQL,    KC_DOT,  KC_4, KC_5, KC_6, KC_P,
 			KC_NO,   KC_NO,   KC_NO,  KC_NO,  KC_UNDS,   KC_ASTR, KC_1, KC_2, KC_3, KC_SLSH,
 			                        KC_TRNS,  KC_TRNS,   KC_0, FUN
 								),
 
 	[_SYM] = LAYOUT_split_3x5_2(
-			KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,     GBPD,  KC_AMPR, KC_ASTR, KC_UNDS, KC_MINS,
-			KC_PIPE, KC_QUOT, KC_EQL, KC_DQUO,  KC_TILD,     KC_NO, OS_CTRL,  OS_ALT,  OS_CMD, OS_SHFT,
+			KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,     KC_PIPE,  KC_AMPR, KC_ASTR, KC_UNDS, KC_MINS,
+			KC_UNDS, KC_QUOT, KC_EQL, KC_DQUO,  KC_TILD,     KC_NO, OS_CTRL,  OS_ALT,  OS_CMD, OS_SHFT,
 			KC_LT,   KC_GT,   KC_NO,  KC_NO,    KC_GRV,      KC_NO, PMIN,    KC_CIRC, KC_PLUS, KC_BSLS,
 			                           FUN,     KC_TRNS,     KC_TRNS, KC_TRNS
 								),
@@ -80,21 +80,26 @@ enum combo_events {
   RCBR_COMBO_Q,
   RPRN_COMBO_Q,
   RBRC_COMBO_Q,
+  // alternative braces
+  LCBR_COMBO_Q2,
+  LPRN_COMBO_Q2,
+  RCBR_COMBO_Q2,
+  RPRN_COMBO_Q2,
   // beakl layer combos
-  CAPS_COMBO_B,
-  ENTER_COMBO_B,
-  TAB_COMBO_B,
-  BSP_COMBO_B,
-  DEL_COMBO_B,
-  CTRLC_COMBO_B,
-  ESC_COMBO_B,
-  // braces
-  LCBR_COMBO_B,
-  LPRN_COMBO_B,
-  LBRC_COMBO_B,
-  RCBR_COMBO_B,
-  RPRN_COMBO_B,
-  RBRC_COMBO_B,
+  //CAPS_COMBO_B,
+  //ENTER_COMBO_B,
+  //TAB_COMBO_B,
+  //BSP_COMBO_B,
+  //DEL_COMBO_B,
+  //CTRLC_COMBO_B,
+  //ESC_COMBO_B,
+  //// braces
+  //LCBR_COMBO_B,
+  //LPRN_COMBO_B,
+  //LBRC_COMBO_B,
+  //RCBR_COMBO_B,
+  //RPRN_COMBO_B,
+  //RBRC_COMBO_B,
   // Other combos...
   COMBO_LENGTH
 };
@@ -107,27 +112,31 @@ const uint16_t PROGMEM bsp_combo_q[] = {KC_F, KC_S, COMBO_END};
 const uint16_t PROGMEM del_combo_q[] = {KC_J, KC_L, COMBO_END};
 // Ctrl-c combo mostly for Emacs
 const uint16_t PROGMEM ctrlc_combo_q[] = {KC_J, KC_K, KC_L, COMBO_END};
-const uint16_t PROGMEM esc_combo_q[] = {KC_F, KC_D, KC_S, COMBO_END};
+const uint16_t PROGMEM esc_combo_q[] = {KC_D, KC_S, COMBO_END};
 // beakl combos
-const uint16_t PROGMEM caps_combo_b[] = {KC_A, KC_S, COMBO_END};
-const uint16_t PROGMEM enter_combo_b[] = {KC_S, KC_T, COMBO_END};
-const uint16_t PROGMEM tab_combo_b[] = {KC_E, KC_A, COMBO_END};
-const uint16_t PROGMEM bsp_combo_b[] = {KC_I, KC_A, COMBO_END};
-const uint16_t PROGMEM del_combo_b[] = {KC_S, KC_N, COMBO_END};
-// braces - vertical combos
-const uint16_t PROGMEM lcbr_combo_b[] = {KC_O, KC_E, COMBO_END};
-const uint16_t PROGMEM lprn_combo_b[] = {KC_U, KC_A, COMBO_END};
-const uint16_t PROGMEM lbrc_combo_b[] = {KC_X, KC_DOT, COMBO_END};
-const uint16_t PROGMEM rcbr_combo_b[] = {KC_M, KC_T, COMBO_END};
-const uint16_t PROGMEM rprn_combo_b[] = {KC_C, KC_S, COMBO_END};
-const uint16_t PROGMEM rbrc_combo_b[] = {KC_G, KC_D, COMBO_END};
+//const uint16_t PROGMEM caps_combo_b[] = {KC_A, KC_S, COMBO_END};
+//const uint16_t PROGMEM enter_combo_b[] = {KC_S, KC_T, COMBO_END};
+//const uint16_t PROGMEM tab_combo_b[] = {KC_E, KC_A, COMBO_END};
+//const uint16_t PROGMEM bsp_combo_b[] = {KC_I, KC_A, COMBO_END};
+//const uint16_t PROGMEM del_combo_b[] = {KC_S, KC_N, COMBO_END};
+//// braces - vertical combos
+//const uint16_t PROGMEM lcbr_combo_b[] = {KC_O, KC_E, COMBO_END};
+//const uint16_t PROGMEM lprn_combo_b[] = {KC_U, KC_A, COMBO_END};
+//const uint16_t PROGMEM lbrc_combo_b[] = {KC_X, KC_DOT, COMBO_END};
+//const uint16_t PROGMEM rcbr_combo_b[] = {KC_M, KC_T, COMBO_END};
+//const uint16_t PROGMEM rprn_combo_b[] = {KC_C, KC_S, COMBO_END};
+//const uint16_t PROGMEM rbrc_combo_b[] = {KC_G, KC_D, COMBO_END};
 // braces qwerty
-const uint16_t PROGMEM lcbr_combo_q[] = {KC_D, KC_E, COMBO_END};
-const uint16_t PROGMEM lprn_combo_q[] = {KC_F, KC_R, COMBO_END};
-const uint16_t PROGMEM lbrc_combo_q[] = {KC_T, KC_G, COMBO_END};
-const uint16_t PROGMEM rcbr_combo_q[] = {KC_I, KC_K, COMBO_END};
-const uint16_t PROGMEM rprn_combo_q[] = {KC_U, KC_J, COMBO_END};
-const uint16_t PROGMEM rbrc_combo_q[] = {KC_Y, KC_H, COMBO_END};
+const uint16_t PROGMEM lcbr_combo_q[] = {KC_D, KC_E, COMBO_END}; // {
+const uint16_t PROGMEM lcbr_combo_q2[] = {KC_E, KC_R, COMBO_END}; // {
+const uint16_t PROGMEM lprn_combo_q[] = {KC_F, KC_R, COMBO_END}; // (
+const uint16_t PROGMEM lprn_combo_q2[] = {KC_C, KC_V, COMBO_END}; // (
+const uint16_t PROGMEM lbrc_combo_q[] = {KC_T, KC_G, COMBO_END}; // [
+const uint16_t PROGMEM rcbr_combo_q[] = {KC_I, KC_K, COMBO_END}; // }
+const uint16_t PROGMEM rcbr_combo_q2[] = {KC_I, KC_U, COMBO_END}; // }
+const uint16_t PROGMEM rprn_combo_q[] = {KC_U, KC_J, COMBO_END}; // )
+const uint16_t PROGMEM rprn_combo_q2[] = {KC_M, KC_COMM, COMBO_END}; // )
+const uint16_t PROGMEM rbrc_combo_q[] = {KC_Y, KC_H, COMBO_END}; // ]
 
 // Ctrl-c combo mostly for Emacs
 const uint16_t PROGMEM ctrlc_combo_b[] = {KC_S, KC_T, KC_N, COMBO_END};
@@ -147,26 +156,32 @@ combo_t key_combos[] = {
   [RCBR_COMBO_Q] = COMBO(rcbr_combo_q, KC_RCBR),
   [RPRN_COMBO_Q] = COMBO(rprn_combo_q, KC_RPRN),
   [RBRC_COMBO_Q] = COMBO(rbrc_combo_q, KC_RBRC),
+  // alternative braces
+  [LCBR_COMBO_Q2] = COMBO(lcbr_combo_q2, KC_LCBR),
+  [LPRN_COMBO_Q2] = COMBO(lprn_combo_q2, KC_LPRN),
+  [RCBR_COMBO_Q2] = COMBO(rcbr_combo_q2, KC_RCBR),
+  [RPRN_COMBO_Q2] = COMBO(rprn_combo_q2, KC_RPRN),
+
   // Other combos...
-  [CAPS_COMBO_B] = COMBO_ACTION(caps_combo_b),
-  [ENTER_COMBO_B] = COMBO(enter_combo_b, KC_ENT),
-  [TAB_COMBO_B] = COMBO(tab_combo_b, KC_TAB),
-  [BSP_COMBO_B] = COMBO(bsp_combo_b, KC_BSPC),
-  [DEL_COMBO_B] = COMBO(del_combo_b, KC_DEL),
-  [CTRLC_COMBO_B] = COMBO(ctrlc_combo_b, LCTL(KC_C)),
-  [ESC_COMBO_B] = COMBO(esc_combo_b, KC_ESC),
-  [LCBR_COMBO_B] = COMBO(lcbr_combo_b, KC_LCBR),
-  [LPRN_COMBO_B] = COMBO(lprn_combo_b, KC_LPRN),
-  [LBRC_COMBO_B] = COMBO(lbrc_combo_b, KC_LBRC),
-  [RCBR_COMBO_B] = COMBO(rcbr_combo_b, KC_RCBR),
-  [RPRN_COMBO_B] = COMBO(rprn_combo_b, KC_RPRN),
-  [RBRC_COMBO_B] = COMBO(rbrc_combo_b, KC_RBRC),
+  //[CAPS_COMBO_B] = COMBO_ACTION(caps_combo_b),
+  //[ENTER_COMBO_B] = COMBO(enter_combo_b, KC_ENT),
+  //[TAB_COMBO_B] = COMBO(tab_combo_b, KC_TAB),
+  //[BSP_COMBO_B] = COMBO(bsp_combo_b, KC_BSPC),
+  //[DEL_COMBO_B] = COMBO(del_combo_b, KC_DEL),
+  //[CTRLC_COMBO_B] = COMBO(ctrlc_combo_b, LCTL(KC_C)),
+  //[ESC_COMBO_B] = COMBO(esc_combo_b, KC_ESC),
+  //[LCBR_COMBO_B] = COMBO(lcbr_combo_b, KC_LCBR),
+  //[LPRN_COMBO_B] = COMBO(lprn_combo_b, KC_LPRN),
+  //[LBRC_COMBO_B] = COMBO(lbrc_combo_b, KC_LBRC),
+  //[RCBR_COMBO_B] = COMBO(rcbr_combo_b, KC_RCBR),
+  //[RPRN_COMBO_B] = COMBO(rprn_combo_b, KC_RPRN),
+  //[RBRC_COMBO_B] = COMBO(rbrc_combo_b, KC_RBRC),
 };
 
 void process_combo_event(uint16_t combo_index, bool pressed) {
   switch(combo_index) {
     case CAPS_COMBO_Q:
-    case CAPS_COMBO_B:
+    //case CAPS_COMBO_B:
       if (pressed) {
         caps_word_set(true);  // Activate Caps Word!
       }
@@ -251,11 +266,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 				   &sw_app_active, KC_LGUI, KC_TAB, SW_APP,
 				   keycode, record
 				   );
-
-	update_oneshot(
-				   &os_shft_state, KC_LSFT, OS_SHFT,
-				   keycode, record, false
-				   );
 	update_oneshot(
 				   &os_ctrl_state, KC_LCTL, OS_CTRL,
 				   keycode, record, false
@@ -288,6 +298,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
                               return false;        // Return false to ignore further processing of key
                         }
                         break;
+                case NUM:
+                        if (record->tap.count) {
+                              // there must be a better way ... but this works ;-)
+                              update_oneshot(&os_shft_state, KC_LSFT, OS_SHFT,
+                                   OS_SHFT, record, false);
+                              return false;        // Return false to ignore further processing of key
+                        }
+                        break;
+
                 // enable oneshot layer switch on hold
                 case SYM:
                         if (!record->tap.count) {
@@ -307,6 +326,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
                 default:
                           update_oneshot(&os_ralt_state, KC_RALT, OS_RALT,
                                          keycode, record, false);
+                          update_oneshot(&os_shft_state, KC_LSFT, OS_SHFT,
+				         keycode, record, false);
                           update_oneshot(&os_sym_state, _SYM, OS_SYM,
                                          keycode, record, true);
 	}

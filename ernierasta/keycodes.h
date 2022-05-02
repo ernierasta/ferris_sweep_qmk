@@ -6,7 +6,8 @@
 #include "oneshot.h"
 
 // Layer keys
-#define NUM OSL(_NUM)
+//#define NUM OSL(_NUM)
+#define NUM LT(_NUM, OS_SHFT)
 //#define SYM OSL(_SYM)
 #define SYM LT(OS_SYM, KC_BSPC) // OS SYM Switch on hold, Backspace on tap (intercepted in process_record_user)
 #define RSFT_TRALT RSFT_T(OS_RALT) // Shift held, OS RAlt tapped (intercepted in process_record_user) 
@@ -25,6 +26,7 @@
 #define TAB_R KC_TAB
 #define ALF LGUI(KC_SPC)
 #define HOOK HYPR(KC_H)
+#define COLON RSFT(KC_P)
 // window resizing shortcuts
 // left, right, full
 // workspace shortcuts

@@ -259,7 +259,63 @@
 </foreignObject>
 
 <foreignObject x="671" y="73" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="RSFT(KC_P" class="rsft(kc_p"><div class="glyph">RSFT(KC_P</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="COLON" class="colon"><div class="glyph">:</div></div>
+</foreignObject>
+
+<foreignObject x="14" y="132" width="65" height="55" class="text-container">
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_NO" class="kc_no"><div class="glyph"></div></div>
+</foreignObject>
+
+<foreignObject x="83" y="132" width="65" height="55" class="text-container">
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_NO" class="kc_no"><div class="glyph"></div></div>
+</foreignObject>
+
+<foreignObject x="152" y="132" width="65" height="55" class="text-container">
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_NO" class="kc_no"><div class="glyph"></div></div>
+</foreignObject>
+
+<foreignObject x="221" y="132" width="65" height="55" class="text-container">
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_NO" class="kc_no"><div class="glyph"></div></div>
+</foreignObject>
+
+<foreignObject x="290" y="132" width="65" height="55" class="text-container">
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_UNDS" class="kc_unds"><div class="glyph">&#95;</div></div>
+</foreignObject>
+
+<foreignObject x="395" y="132" width="65" height="55" class="text-container">
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_ASTR" class="kc_astr"><div class="glyph">*</div></div>
+</foreignObject>
+
+<foreignObject x="464" y="132" width="65" height="55" class="text-container">
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_1" class="kc_1"><div class="glyph">1</div></div>
+</foreignObject>
+
+<foreignObject x="533" y="132" width="65" height="55" class="text-container">
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_2" class="kc_2"><div class="glyph">2</div></div>
+</foreignObject>
+
+<foreignObject x="602" y="132" width="65" height="55" class="text-container">
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_3" class="kc_3"><div class="glyph">3</div></div>
+</foreignObject>
+
+<foreignObject x="671" y="132" width="65" height="55" class="text-container">
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_SLSH" class="kc_slsh"><div class="glyph">/</div></div>
+</foreignObject>
+
+<foreignObject x="221" y="211" width="65" height="55" class="text-container">
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_TRNS" class="transparent held num"><div class="glyph">Num</div><div class="annotation layer">held</div></div>
+</foreignObject>
+
+<foreignObject x="290" y="211" width="65" height="55" class="text-container">
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_TRNS" class="transparent nav_spc"><div class="glyph">&#9251;</div><div class="annotation layer">layer</div></div>
+</foreignObject>
+
+<foreignObject x="395" y="211" width="65" height="55" class="text-container">
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_0" class="kc_0"><div class="glyph">0</div></div>
+</foreignObject>
+
+<foreignObject x="464" y="211" width="65" height="55" class="text-container">
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="FUN" class="fun"><div class="glyph">Fun</div><div class="annotation layer">layer</div></div>
 </foreignObject>
 
 </svg>

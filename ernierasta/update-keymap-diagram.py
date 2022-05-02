@@ -67,9 +67,9 @@ layer_held_keycodes = { # keycodes whose keys are implicitly held down on a give
   "_NAV": ["NAV_SPC"],
   "_NUM": ["NUM"],
   "_SYM": ["SYM"],
-  "_WNAV": ["KC_LSFT", "NAV_SPC"],
+  "_WNAV": ["RSFT_TRALT", "NAV_SPC"],
   "_FUN": ["NUM", "SYM"],
-  "_MOUSE": ["MOUSE"]
+  "_MOUSE": ["NAV_SPC", "SYM"]
 }
 
 # Advanced
@@ -362,7 +362,7 @@ key_names = {
     "KC_LSFT": {"label": "&#8679;", "title": "Shift"},
     "NAV_SPC": {"label": "&#9251;", "title": ""},
     "NUM": {"label": "Num", "title": ""},
-    "SYM": {"label": "Sym", "title": ""},
+    "SYM": {"label": "Sym + Tap &#9003;", "title": ""},
     "WNAV": {"label": "Work space", "title": ""},
     "FUN": {"label": "Fun", "title": ""},
     "KC_VOLD": {"label": "&#128265;", "title": "Volume Down"},
@@ -388,6 +388,7 @@ key_names = {
     "KC_RGHT": {"label": "&#9654;", "title": "Right"},
     "KC_ENT": {"label": "&#9166;", "title": "Enter"},
     "KC_SCLN": {"label": ";", "title": ""},
+    "COLON": {"label": ":", "title": ""},
     "KC_LPRN": {"label": "(", "title": ""},
     "KC_RPRN": {"label": ")", "title": ""},
     "KC_BSLS": {"label": "\\", "title": ""},

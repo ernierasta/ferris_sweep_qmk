@@ -279,7 +279,7 @@
 </foreignObject>
 
 <foreignObject x="290" y="132" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Shift (KC_LSFT)" class="held kc_lsft"><div class="glyph">&#8679;</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Shift (KC_LSFT)" class="kc_lsft"><div class="glyph">&#8679;</div></div>
 </foreignObject>
 
 <foreignObject x="395" y="132" width="65" height="55" class="text-container">
@@ -311,11 +311,11 @@
 </foreignObject>
 
 <foreignObject x="395" y="211" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_TRNS" class="transparent rsft_tralt"><div class="glyph">Shift + Tap RALT</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_TRNS" class="transparent held rsft_tralt"><div class="glyph">Shift + Tap RALT</div></div>
 </foreignObject>
 
 <foreignObject x="464" y="211" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_TRNS" class="transparent sym"><div class="glyph">Sym</div><div class="annotation layer">layer</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_TRNS" class="transparent sym"><div class="glyph">Sym + Tap &#9003;</div><div class="annotation layer">layer</div></div>
 </foreignObject>
 
 </svg>
