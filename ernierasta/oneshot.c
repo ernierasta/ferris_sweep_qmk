@@ -23,7 +23,7 @@ void update_oneshot(
             }
             
             if (is_oneshot_cancel_key(keycode) && *state == os_up_queued) {
-                // Cancel oneshot on designated cancel keydown.
+                // Cancel oneshot if keycode is used as cancel key (second tap will cancel)
                 *state = os_up_unqueued;
                 if (isLayerSwitch) {
                     layer_off(mod); 
@@ -31,7 +31,6 @@ void update_oneshot(
                     unregister_code(mod);
                 }
             }
-
         } else {
             // Trigger keyup
             switch (*state) {
@@ -54,13 +53,22 @@ void update_oneshot(
         }
     } else {
         if (record->event.pressed) {
-            if (is_oneshot_cancel_key(keycode) && *state != os_up_unqueued) {
-                // Cancel oneshot on designated cancel keydown.
-                *state = os_up_unqueued;
-                if (isLayerSwitch) {
-                    layer_off(mod);
+            if (*state != os_up_unqueued) {
+                if (is_oneshot_cancel_key(keycode) || *state == os_down_one_used) {
+                    // Cancel oneshot on designated cancel keydown.
+                    // Also cancel immediately before second keydown is registered,
+                    // this prevents triggering mod (or layer) if more keys are down
+                    // before first key is up.
+                    *state = os_up_unqueued;
+                    if (isLayerSwitch) {
+                        layer_off(mod);
+                    } else {
+                        unregister_code(mod);
+                    }
                 } else {
-                    unregister_code(mod);
+                    if (*state == os_up_queued) {
+                        *state = os_down_one_used;
+                    }
                 }
             }
         } else {

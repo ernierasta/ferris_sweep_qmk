@@ -308,14 +308,25 @@ static tap shiftralttap_state = {
   .state = 0
 };
 
+oneshot_state os_shft_state = os_up_unqueued;
+oneshot_state os_ralt_state = os_up_unqueued;
+
 void shiftralt_finished (qk_tap_dance_state_t *state, void *user_data) {
   shiftralttap_state.state = cur_dance(state);
+  keyrecord_t record = { .event.pressed = true };
+
   switch (shiftralttap_state.state) {
-    case SINGLE_TAP: register_code(KC_RALT); break;
+    case SINGLE_TAP: 
+                       update_oneshot(&os_ralt_state, KC_RALT, OS_RALT,
+                                   OS_RALT, &record, false);
+                      break;
     case SINGLE_HOLD: register_code(KC_RALT); break;
-    case DOUBLE_TAP: register_code(KC_LSFT); break;
+    case DOUBLE_SINGLE_TAP: 
+    case DOUBLE_TAP: 
+                      update_oneshot(&os_shft_state, KC_LSFT, OS_SHFT,
+                                   OS_SHFT, &record, false); 
+                      break;
     case DOUBLE_HOLD: register_code(KC_LSFT); break;
-    case DOUBLE_SINGLE_TAP: register_code(KC_RALT); unregister_code(KC_RALT); register_code(KC_RALT);
     //Last case is for fast typing. Assuming your key is `f`:
     //For example, when typing the word `buffer`, and you want to make sure that you send `ff` and not `Esc`.
     //In order to type `ff` when typing fast, the next character will have to be hit within the `TAPPING_TERM`, which by default is 200ms.
@@ -323,12 +334,22 @@ void shiftralt_finished (qk_tap_dance_state_t *state, void *user_data) {
 }
 
 void shiftralt_reset (qk_tap_dance_state_t *state, void *user_data) {
+  keyrecord_t record = { .event.pressed = false };
   switch (shiftralttap_state.state) {
-    case SINGLE_TAP: unregister_code(KC_RALT); break;
+    case SINGLE_TAP:
+                    ;
+                    update_oneshot(&os_ralt_state, KC_RALT, OS_RALT,
+                                   OS_RALT, &record, false);
+                    break;
     case SINGLE_HOLD: unregister_code(KC_RALT); break;
-    case DOUBLE_TAP: unregister_code(KC_LSFT); break;
+    case DOUBLE_SINGLE_TAP: 
+    case DOUBLE_TAP: 
+                      ;
+                      update_oneshot(&os_shft_state, KC_LSFT, OS_SHFT,
+                                   OS_SHFT, &record, false); 
+                      break;
     case DOUBLE_HOLD: unregister_code(KC_LSFT);
-    case DOUBLE_SINGLE_TAP: unregister_code(KC_RALT);
+    
   }
   shiftralttap_state.state = 0;
 }
@@ -341,10 +362,8 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 
 bool sw_app_active = false;
 
-oneshot_state os_shft_state = os_up_unqueued;
 oneshot_state os_ctrl_state = os_up_unqueued;
 oneshot_state os_alt_state = os_up_unqueued;
-oneshot_state os_ralt_state = os_up_unqueued;
 oneshot_state os_cmd_state = os_up_unqueued;
 oneshot_state os_sym_state = os_up_unqueued;
 
@@ -412,6 +431,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
                                 return false;
                             }
                         }
+                        break;
+                case TD(DANCE_SHIFTRALT):
+                case DANCE_SHIFTRALT:
                         break;
                 default:
                           update_oneshot(&os_ralt_state, KC_RALT, OS_RALT,
