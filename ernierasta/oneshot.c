@@ -66,7 +66,7 @@ void update_oneshot(
                         unregister_code(mod);
                     }
                 } else {
-                    if (*state != os_down_one_used) {
+                    if (*state == os_up_queued) {
                         *state = os_down_one_used;
                     }
                 }
