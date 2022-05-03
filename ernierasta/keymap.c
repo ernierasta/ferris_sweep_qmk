@@ -221,7 +221,6 @@ bool is_oneshot_cancel_key(uint16_t keycode) {
 	case CLEAR:
         case NUM:
         case SYM:
-        case RSFT_TRALT:
         case OS_RALT:
         case KC_RALT:
             return true;
@@ -264,6 +263,7 @@ bool caps_word_press_user(uint16_t keycode) {
     case KC_BSPC:
     case KC_MINS:
     case KC_UNDS:
+    case KC_RALT:
       return true;
 
     default:

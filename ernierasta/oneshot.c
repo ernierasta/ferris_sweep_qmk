@@ -78,13 +78,14 @@ void update_oneshot(
                 case os_down_unused:
                     *state = os_down_used;
                     break;
+		case os_down_one_used:
                 case os_up_queued:
                     *state = os_up_unqueued;
-                if (isLayerSwitch) {
-                    layer_off(mod);
-                } else {
-                    unregister_code(mod);
-                }
+                    if (isLayerSwitch) {
+                        layer_off(mod);
+                    } else {
+                        unregister_code(mod);
+                    }
                     break;
                 default:
                     break;

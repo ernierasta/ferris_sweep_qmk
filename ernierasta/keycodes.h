@@ -10,7 +10,7 @@
 #define NUM LT(_NUM, OS_SHFT)
 //#define SYM OSL(_SYM)
 #define SYM LT(OS_SYM, KC_BSPC) // OS SYM Switch on hold, Backspace on tap (intercepted in process_record_user)
-//#define RSFT_TRALT RSFT_T(OS_RALT) // Shift held, OS RAlt tapped (intercepted in process_record_user) 
+#define RSFT_TRALT RSFT_T(OS_RALT) // Shift held, OS RAlt tapped (intercepted in process_record_user) 
 #define RALT_TD_RSFT TD(DANCE_SHIFTRALT) // Tap - oneshot RAlt, Hold - RAlt, 2x tap oneshot RShift, tap & hold RShift
 #define WNAV MO(_WNAV) // Workspace navigation and media
 #define FUN MO(_FUN) // Fkeys and mods only
