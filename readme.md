@@ -20,6 +20,21 @@ find more on:
 or if main site is still in "emergency mode", here is backup:
 [My klawa.pl restored site](https://klawa.zori.pl)
 
+Because I use two languages and my layouts are on on all my OS-es
+my keyboard is outputing qwerty, but combos and maybe some other aspects may feel weird
+for qwerty users.
+
+Useful stuff
+------------
+
+Why this firmware may not be useful to you as is, there may be interesting
+pieces of code you maybe can reuse.
+
+1. Improved oneshot implementation:
+ - added support for oneshot layers,
+ - enabled trigger key to be also cancel key,
+ - prevented accidentally modifying multiple keys if typed quickly.
+
 Quickstart
 ----------
 
