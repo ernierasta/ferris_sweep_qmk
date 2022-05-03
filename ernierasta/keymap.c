@@ -302,7 +302,7 @@ int cur_dance (qk_tap_dance_state_t *state) {
   else return 8; //magic number. At some point this method will expand to work for more presses
 }
 
-//instanalize an instance of 'tap' for the 'x' tap dance.
+//instanalize an instance of 'tap' for the 'shiftalt' tap dance.
 static tap shiftralttap_state = {
   .is_press_action = true,
   .state = 0

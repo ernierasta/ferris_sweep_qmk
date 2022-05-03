@@ -30,10 +30,14 @@ Useful stuff
 While this firmware may not be useful to you as is, there may be interesting
 pieces of code you maybe can reuse.
 
-1. Improved oneshot implementation:
+1. Improved Callum's oneshot implementation:
  - added support for oneshot layers,
  - enabled trigger key to be also cancel key,
  - prevented accidentally modifying multiple keys if typed quickly.
+
+If you want to use it, just take `oneshot.c` and `oneshot.h` files. The only difference
+compared to original is, that I had added one parameter to update_oneshot function, it is
+boolean, if `true` it means it is layer, not mod to oneshot.
 
 Quickstart
 ----------
