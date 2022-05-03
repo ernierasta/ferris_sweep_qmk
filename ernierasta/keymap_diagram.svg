@@ -221,7 +221,7 @@
 </foreignObject>
 
 <foreignObject x="671" y="44" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_P" class="kc_p"><div class="glyph">P</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="COLON" class="colon"><div class="glyph">:</div></div>
 </foreignObject>
 
 <foreignObject x="14" y="103" width="65" height="55" class="text-container">
@@ -313,7 +313,7 @@
 </foreignObject>
 
 <foreignObject x="395" y="241" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="RSFT_TRALT" class="rsft_tralt"><div class="glyph">Shift + Tap RALT</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="RALT_TD_RSFT" class="ralt_td_rsft"><div class="glyph">RAlt + 2xT &#8679;</div></div>
 </foreignObject>
 
 <foreignObject x="464" y="241" width="65" height="55" class="text-container">
@@ -453,7 +453,7 @@
 </foreignObject>
 
 <foreignObject x="395" y="561" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="RSFT_TRALT" class="rsft_tralt"><div class="glyph">Shift + Tap RALT</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="RALT_TD_RSFT" class="ralt_td_rsft"><div class="glyph">RAlt + 2xT &#8679;</div></div>
 </foreignObject>
 
 <foreignObject x="464" y="561" width="65" height="55" class="text-container">
@@ -541,7 +541,7 @@
 </foreignObject>
 
 <foreignObject x="671" y="743" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="COLON" class="colon"><div class="glyph">:</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_P" class="kc_p"><div class="glyph">P</div></div>
 </foreignObject>
 
 <foreignObject x="14" y="802" width="65" height="55" class="text-container">
@@ -625,7 +625,7 @@
 </foreignObject>
 
 <foreignObject x="395" y="1004" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="GBPD" class="gbpd"><div class="glyph">&#163;</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_PIPE" class="kc_pipe"><div class="glyph">&#124;</div></div>
 </foreignObject>
 
 <foreignObject x="464" y="1004" width="65" height="55" class="text-container">
@@ -645,7 +645,7 @@
 </foreignObject>
 
 <foreignObject x="14" y="1063" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_PIPE" class="kc_pipe"><div class="glyph">&#124;</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_UNDS" class="kc_unds"><div class="glyph">&#95;</div></div>
 </foreignObject>
 
 <foreignObject x="83" y="1063" width="65" height="55" class="text-container">
@@ -733,7 +733,7 @@
 </foreignObject>
 
 <foreignObject x="395" y="1201" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_TRNS" class="transparent rsft_tralt"><div class="glyph">Shift + Tap RALT</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_TRNS" class="transparent ralt_td_rsft"><div class="glyph">RAlt + 2xT &#8679;</div></div>
 </foreignObject>
 
 <foreignObject x="464" y="1201" width="65" height="55" class="text-container">
@@ -985,7 +985,7 @@
 </foreignObject>
 
 <foreignObject x="395" y="1762" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_RSFT" class="kc_rsft"><div class="glyph">RSFT</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Shift (KC_RSFT)" class="kc_rsft"><div class="glyph">&#8679;</div></div>
 </foreignObject>
 
 <foreignObject x="464" y="1762" width="65" height="55" class="text-container">
@@ -1013,7 +1013,7 @@
 </foreignObject>
 
 <foreignObject x="395" y="1841" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_TRNS" class="transparent held rsft_tralt"><div class="glyph">Shift + Tap RALT</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_TRNS" class="transparent held ralt_td_rsft"><div class="glyph">RAlt + 2xT &#8679;</div></div>
 </foreignObject>
 
 <foreignObject x="464" y="1841" width="65" height="55" class="text-container">
@@ -1153,7 +1153,7 @@
 </foreignObject>
 
 <foreignObject x="395" y="2161" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_TRNS" class="transparent rsft_tralt"><div class="glyph">Shift + Tap RALT</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_TRNS" class="transparent ralt_td_rsft"><div class="glyph">RAlt + 2xT &#8679;</div></div>
 </foreignObject>
 
 <foreignObject x="464" y="2161" width="65" height="55" class="text-container">
@@ -1293,7 +1293,7 @@
 </foreignObject>
 
 <foreignObject x="395" y="2481" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_TRNS" class="transparent rsft_tralt"><div class="glyph">Shift + Tap RALT</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_TRNS" class="transparent ralt_td_rsft"><div class="glyph">RAlt + 2xT &#8679;</div></div>
 </foreignObject>
 
 <foreignObject x="464" y="2481" width="65" height="55" class="text-container">

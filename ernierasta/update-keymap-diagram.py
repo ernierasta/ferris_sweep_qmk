@@ -22,7 +22,7 @@
 # Files (in same dir as this script)
 keymap_filename = "keymap.c"
 svg_filename = "keymap_diagram.svg"
-create_layer_diagrams = True # also create one diagram per layer, named "[svg_filename basename]_[layer_id lowercase].[svg_filename extension]"
+create_layer_diagrams = False # also create one diagram per layer, named "[svg_filename basename]_[layer_id lowercase].[svg_filename extension]"
 
 # SVG Geometry
 diagram_inset = 10 # horizontal and vertical, around entire diagram
@@ -67,7 +67,7 @@ layer_held_keycodes = { # keycodes whose keys are implicitly held down on a give
   "_NAV": ["NAV_SPC"],
   "_NUM": ["NUM"],
   "_SYM": ["SYM"],
-  "_WNAV": ["RSFT_TRALT", "NAV_SPC"],
+  "_WNAV": ["RALT_TD_RSFT", "NAV_SPC"],
   "_FUN": ["NUM", "SYM"],
   "_MOUSE": ["NAV_SPC", "SYM"]
 }
@@ -353,13 +353,15 @@ key_names = {
     "LHLF": {"label": "Resize left", "title": ""},
     "RHLF": {"label": "Resize right", "title": ""},
     "FULL": {"label": "Resize full", "title": ""},
-    "RSFT_TRALT": {"label": "Shift + Tap RALT", "title": ""},
+    "RSFT_TRALT": {"label": "&#8679; + Tap RALT", "title": ""},
+    "RALT_TD_RSFT": {"label": "RAlt + 2xT &#8679;", "title": ""},
     "OS_SHFT": {"label": "&#8679;", "title": "Shift"},
     "OS_CTRL": {"label": "Ctrl", "title": "Control"},
     "OS_ALT": {"label": "Alt", "title": "Option"},
     "OS_CMD": {"label": "Gui", "title": "Command"},
     "SW_APP": {"label": "Switch App", "title": ""},
     "KC_LSFT": {"label": "&#8679;", "title": "Shift"},
+    "KC_RSFT": {"label": "&#8679;", "title": "Shift"},
     "NAV_SPC": {"label": "&#9251;", "title": ""},
     "NUM": {"label": "Num", "title": ""},
     "SYM": {"label": "Sym + Tap &#9003;", "title": ""},

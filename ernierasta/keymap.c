@@ -37,13 +37,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 			KC_Q, KC_W, KC_E, KC_R, KC_T,    KC_Y, KC_U, KC_I,    KC_O,   COLON,
 			KC_A, KC_S, KC_D, KC_F, KC_G,    KC_H, KC_J, KC_K,    KC_L,   KC_SCLN,
 			KC_Z, KC_X, KC_C, KC_V, KC_B,    KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH,
-			                NUM, NAV_SPC,    TD(DANCE_SHIFTRALT), SYM
+			                NUM, NAV_SPC,    RALT_TD_RSFT, SYM
 							   ),
 	[_KLW] = LAYOUT_split_3x5_2(
 			KC_F,  KC_U, KC_L, KC_P, KC_D,     KC_H, KC_K, KC_T,    KC_Y,   KC_SCLN,
 			KC_A,  KC_E, KC_S, KC_N, KC_M,     KC_J, KC_R, KC_Z,    KC_O,   KC_I,
 			KC_V,  KC_X, KC_C, KC_G, KC_Q,     KC_B, KC_W, KC_COMM, KC_DOT, KC_SLSH,
-					 NUM, NAV_SPC,     RSFT_TRALT, SYM
+					 NUM, NAV_SPC,     RALT_TD_RSFT, SYM
 							   ),
 	[_NUM] = LAYOUT_split_3x5_2(
 			KC_NO,   KC_NO,   KC_NO,  KC_NO,  KC_PERC,   KC_PLUS, KC_7, KC_8, KC_9, KC_MINS,
@@ -76,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[_FUN] = LAYOUT_split_3x5_2(
 			KC_NO,   KC_NO,    KC_NO,    KC_NO,    KC_CAPS,      KC_F12,  KC_F7, KC_F8, KC_F9, KC_NO,
-			OS_SHFT, OS_CTRL,  OS_ALT,   OS_CMD,   KC_ESC,       KC_F11,  KC_F4, KC_F5, KC_F6, KC_NO,
+			OS_SHFT, OS_CMD,  OS_ALT,   OS_CTRL,   KC_ESC,       KC_F11,  KC_F4, KC_F5, KC_F6, KC_NO,
 			KC_NO,   KC_NO,    KC_NO,    KC_NO,    KC_NO,        KC_F10,  KC_F1, KC_F2, KC_F3, KC_NO,
 			                             KC_TRNS,  KC_TRNS,      KC_TRNS, KC_TRNS
 								),
