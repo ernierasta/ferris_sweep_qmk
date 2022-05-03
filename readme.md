@@ -27,7 +27,7 @@ for qwerty users.
 Useful stuff
 ------------
 
-Why this firmware may not be useful to you as is, there may be interesting
+While this firmware may not be useful to you as is, there may be interesting
 pieces of code you maybe can reuse.
 
 1. Improved oneshot implementation:
