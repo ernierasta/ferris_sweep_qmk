@@ -1,6 +1,6 @@
 #include QMK_KEYBOARD_H
 
-// Callum oneshot mods and swapper
+// Callum oneshot mods and swapper (edited by ernierasta)
 // https://github.com/callum-oakley/qmk_firmware/blob/master/users/callum
 #include "caps_word.h"
 #include "oneshot.h"
@@ -359,6 +359,41 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 };
 
 // tap dance code end
+
+// key override start
+
+// alt_wnav_override allowes me to press NAV_SPC+RALT_TD_RSFT or RALT_TD_RSFT+NAV_SPC to switch to 
+// _WNAV (window navigation layer). Without override only NAV_SPC+RALT_TD_RSFT works.
+
+// This is called when the override activates and deactivates. Enable the fn layer on activation and disable on deactivation
+bool momentary_layer(bool key_down, void *layer) {
+    if (key_down) {
+        layer_on((uint8_t)(uintptr_t)layer);
+    } else {
+        layer_off((uint8_t)(uintptr_t)layer);
+    }
+
+    return false;
+}
+
+const key_override_t alt_wnav_override = {.trigger_mods     = MOD_BIT(KC_RALT),
+                                    .layers                 = ~0,
+                                    .trigger                = NAV_SPC,
+                                    .suppressed_mods        = MOD_BIT(KC_RALT),
+                                    .options                = ko_option_no_unregister_on_other_key_down,
+                                    //.negative_mod_mask      = (uint8_t) ~(MOD_BIT(KC_RALT)),
+                                    .custom_action          = momentary_layer,
+                                    .context                = (void *)_WNAV,
+                                    .replacement            = KC_NO,
+                                    .enabled                = NULL};
+
+
+// This globally defines all key overrides to be used
+const key_override_t **key_overrides = (const key_override_t *[]){
+	&alt_wnav_override,
+	NULL // Null terminate the array of overrides!
+};
+// key override end
 
 bool sw_app_active = false;
 
