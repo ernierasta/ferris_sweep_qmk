@@ -1069,7 +1069,7 @@
 </foreignObject>
 
 <foreignObject x="83" y="2023" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Control (OS_CTRL)" class="os_ctrl"><div class="glyph">Ctrl</div><div class="annotation one-shot">one-shot</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Command (OS_CMD)" class="os_cmd"><div class="glyph">Gui</div><div class="annotation one-shot">one-shot</div></div>
 </foreignObject>
 
 <foreignObject x="152" y="2023" width="65" height="55" class="text-container">
@@ -1077,7 +1077,7 @@
 </foreignObject>
 
 <foreignObject x="221" y="2023" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Command (OS_CMD)" class="os_cmd"><div class="glyph">Gui</div><div class="annotation one-shot">one-shot</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="Control (OS_CTRL)" class="os_ctrl"><div class="glyph">Ctrl</div><div class="annotation one-shot">one-shot</div></div>
 </foreignObject>
 
 <foreignObject x="290" y="2023" width="65" height="55" class="text-container">
@@ -1209,11 +1209,11 @@
 </foreignObject>
 
 <foreignObject x="83" y="2343" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_NO" class="kc_no"><div class="glyph"></div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_MS_BTN2" class="kc_ms_btn2"><div class="glyph">MS_BTN2</div></div>
 </foreignObject>
 
 <foreignObject x="152" y="2343" width="65" height="55" class="text-container">
-	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_MS_BTN2" class="kc_ms_btn2"><div class="glyph">MS_BTN2</div></div>
+	<div xmlns="http://www.w3.org/1999/xhtml" lang="en" title="KC_MS_BTN3" class="kc_ms_btn3"><div class="glyph">MS_BTN3</div></div>
 </foreignObject>
 
 <foreignObject x="221" y="2343" width="65" height="55" class="text-container">

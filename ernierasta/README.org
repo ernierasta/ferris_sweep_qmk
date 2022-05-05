@@ -15,4 +15,4 @@ I have modified [[https://github.com/mattgemmell/qmk_firmware][Matt
 Gemmell's]] ~update-keymap-diagram.py~ script so that it would work with my layout,
 and that generates the image below.
 
-[[./keymap_diagram.svg]]
+[[./keyboard_keymap.svg]]

@@ -21,7 +21,7 @@
 
 # Files (in same dir as this script)
 keymap_filename = "keymap.c"
-svg_filename = "keymap_diagram.svg"
+svg_filename = "keyboard_keymap.svg"
 create_layer_diagrams = False # also create one diagram per layer, named "[svg_filename basename]_[layer_id lowercase].[svg_filename extension]"
 
 # SVG Geometry
