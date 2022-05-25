@@ -407,7 +407,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 	if (!process_caps_word(keycode, record)) { return false; }
 
 	update_swapper(
-				   &sw_app_active, KC_LGUI, KC_TAB, SW_APP,
+				   &sw_app_active, KC_LALT, KC_TAB, SW_APP,
 				   keycode, record
 				   );
 	update_oneshot(
@@ -454,9 +454,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
                 // enable oneshot layer switch on hold
                 case SYM:
                         if (!record->tap.count) {
-                            update_oneshot(&os_sym_state, _SYM, OS_SYM,
-                                   OS_SYM, record, true);
-                            return false;
+                            // disabled oneshot on symbols, it more annoying then usefull for me :-)
+                            //update_oneshot(&os_sym_state, _SYM, OS_SYM,
+                            //       OS_SYM, record, true);
+                            //return false;
                         } else {
                             if (record->tap.count > 1 && record->event.pressed) { // tap & hold
                                 register_code(KC_BSPC);
