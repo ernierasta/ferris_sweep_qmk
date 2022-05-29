@@ -74,7 +74,8 @@ enum layers {
 	_NAV,
 	_WNAV,
 	_FUN,
-        _MOUSE
+    _MOUSE,
+    _UTIL,
 };
 
 enum keycodes {

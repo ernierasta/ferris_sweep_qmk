@@ -85,8 +85,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
               KC_NO, KC_MS_BTN2,   KC_MS_BTN3,   KC_MS_BTN1,   KC_NO,   KC_MS_BTN1, KC_MS_LEFT, KC_MS_DOWN, KC_MS_UP, KC_MS_RIGHT,
               KC_NO, KC_MS_ACCEL0, KC_MS_ACCEL1, KC_MS_ACCEL2, KC_NO,   KC_NO,      KC_NO,      KC_NO,      KC_NO,    KC_NO,  
                                                  KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS
-                                                               )
+                                                               ),
+	[_UTIL] = LAYOUT_split_3x5_2(
+			W1,   W2,    W3,    W4,    W5,        KC_NO, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
+			W6,   W7,    W8,    W9,    W10,       KC_NO, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
+			KC_NO,KC_NO, KC_NO, KC_NO, KC_NO,     KC_NO, KC_NO,   KC_COMM, KC_DOT,  KC_NO,
+			                   KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS
+                            ),
+
 };
+
+// TODO: move all states here
+oneshot_state os_shft_state = os_up_unqueued;
 
 enum combo_events {
   // qwerty layer combos
@@ -109,6 +119,11 @@ enum combo_events {
   LPRN_COMBO_Q2,
   RCBR_COMBO_Q2,
   RPRN_COMBO_Q2,
+  // togggle utility layer
+  UTIL_COMBO_Q,
+  UTIL_COMBO_Q2,
+  // shift no right side
+  RSFT_COMBO_Q,
   // beakl layer combos
   //CAPS_COMBO_B,
   //ENTER_COMBO_B,
@@ -137,6 +152,12 @@ const uint16_t PROGMEM del_combo_q[] = {KC_J, KC_L, COMBO_END};
 // Ctrl-c combo mostly for Emacs
 const uint16_t PROGMEM ctrlc_combo_q[] = {KC_J, KC_K, KC_L, COMBO_END};
 const uint16_t PROGMEM esc_combo_q[] = {KC_D, KC_S, COMBO_END};
+// switch to util layer
+const uint16_t PROGMEM util_combo_q[] = {KC_COMM, KC_DOT, COMBO_END};
+const uint16_t PROGMEM util_combo_q2[] = {KC_X, KC_C, COMBO_END};
+// right shift
+const uint16_t PROGMEM rsft_combo_q[] = {KC_L, KC_SCLN, COMBO_END};
+
 // beakl combos
 //const uint16_t PROGMEM caps_combo_b[] = {KC_A, KC_S, COMBO_END};
 //const uint16_t PROGMEM enter_combo_b[] = {KC_S, KC_T, COMBO_END};
@@ -185,6 +206,12 @@ combo_t key_combos[] = {
   [LPRN_COMBO_Q2] = COMBO(lprn_combo_q2, KC_LPRN),
   [RCBR_COMBO_Q2] = COMBO(rcbr_combo_q2, KC_RCBR),
   [RPRN_COMBO_Q2] = COMBO(rprn_combo_q2, KC_RPRN),
+  // toggle utility layer
+  [UTIL_COMBO_Q]  = COMBO(util_combo_q, TG(_UTIL)),
+  [UTIL_COMBO_Q2]  = COMBO(util_combo_q2, TG(_UTIL)),
+
+  // rshift
+  [RSFT_COMBO_Q]  = COMBO_ACTION(rsft_combo_q),
 
   // Other combos...
   //[CAPS_COMBO_B] = COMBO_ACTION(caps_combo_b),
@@ -203,6 +230,9 @@ combo_t key_combos[] = {
 };
 
 void process_combo_event(uint16_t combo_index, bool pressed) {
+
+  keyrecord_t record = { .event.pressed = false };
+
   switch(combo_index) {
     case CAPS_COMBO_Q:
     //case CAPS_COMBO_B:
@@ -210,6 +240,14 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
         caps_word_set(true);  // Activate Caps Word!
       }
       break;
+    case RSFT_COMBO_Q:
+      if (pressed) {
+        record.event.pressed = true;
+      }
+        update_oneshot(&os_shft_state, KC_LSFT, OS_SHFT,
+                            OS_SHFT, &record, false); 
+      break;
+
 
     // Other combos...
   }
@@ -308,7 +346,7 @@ static tap shiftralttap_state = {
   .state = 0
 };
 
-oneshot_state os_shft_state = os_up_unqueued;
+
 oneshot_state os_ralt_state = os_up_unqueued;
 
 void shiftralt_finished (qk_tap_dance_state_t *state, void *user_data) {
