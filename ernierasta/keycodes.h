@@ -42,6 +42,9 @@
 #define W8 LALT(KC_I)
 #define W9 LALT(KC_O)
 #define W10 LALT(KC_P)
+// next/prev workspace
+#define WNEXT LALT(KC_B)
+#define WPREV LALT(KC_V)
 // windows manipulation - swaywm
 #define WLEFT LALT(KC_J)
 #define WDOWN LALT(KC_K)
@@ -69,6 +72,7 @@
 enum layers {
 	_DEF,
 	_KLW,
+    _GAME,
 	_NUM,
 	_SYM,
 	_NAV,

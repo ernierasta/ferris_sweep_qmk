@@ -18,6 +18,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #pragma once
 // Define number of combos to be used
 
+#define TAPPING_TERM 200
+
+
 // Underglow configuration
 #ifdef RGBLIGHT_ENABLE
   #define RGBLIGHT_ANIMATIONS

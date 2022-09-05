@@ -34,17 +34,27 @@ enum {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[_DEF] = LAYOUT_split_3x5_2(
-			KC_Q, KC_W, KC_E, KC_R, KC_T,    KC_Y, KC_U, KC_I,    KC_O,   COLON,
-			KC_A, KC_S, KC_D, KC_F, KC_G,    KC_H, KC_J, KC_K,    KC_L,   KC_SCLN,
-			KC_Z, KC_X, KC_C, KC_V, KC_B,    KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH,
+			KC_Q,         KC_W,         KC_E, KC_R, KC_T,    KC_Y, KC_U, KC_I,    KC_O,   COLON,
+			KC_A,         KC_S,         KC_D, KC_F, KC_G,    KC_H, KC_J, KC_K,    KC_L,   KC_SCLN,
+			KC_Z, KC_X, KC_C, KC_V, KC_B,    KC_N, KC_M, KC_COMM, LCTL_T(KC_DOT), LSFT_T(KC_SLSH),
 			                NUM, NAV_SPC,    RALT_TD_RSFT, SYM
 							   ),
 	[_KLW] = LAYOUT_split_3x5_2(
-			KC_F,  KC_U, KC_L, KC_P, KC_D,     KC_H, KC_K, KC_T,    KC_Y,   KC_SCLN,
-			KC_A,  KC_E, KC_S, KC_N, KC_M,     KC_J, KC_R, KC_Z,    KC_O,   KC_I,
-			KC_V,  KC_X, KC_C, KC_G, KC_Q,     KC_B, KC_W, KC_COMM, KC_DOT, KC_SLSH,
-					 NUM, NAV_SPC,     RALT_TD_RSFT, SYM
+			KC_F,        KC_U,          KC_L, KC_P, KC_D,     KC_H, KC_K, KC_T,    KC_Y,   KC_SCLN,
+			KC_A,        KC_E,          KC_S, KC_N, KC_M,     KC_J, KC_R, KC_Z,    KC_O,   KC_I,
+			KC_V,        KC_X,          KC_C, KC_G, KC_Q,     KC_B, KC_W, KC_COMM, KC_DOT, KC_SLSH,
+					 NUM, NAV_SPC,      RALT_TD_RSFT, SYM
 							   ),
+    // this layout is crazy. It is done, so it outputs qwerty while having software klawa ...
+    // basic idea is, that it qwerty shifted to the right
+	[_GAME] = LAYOUT_split_3x5_2(
+			KC_ESC,       KC_B,         KC_M, KC_R, KC_T,    KC_Y, KC_U, KC_I,    KC_O,   COLON,
+			KC_TAB,       KC_A,         KC_D, KC_T, KC_G,    KC_H, KC_J, KC_K,    KC_L,   KC_SCLN,
+			LSFT_T(KC_Z), LCTL_T(KC_X), KC_C, KC_V, KC_B,    KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH,
+			                NUM, NAV_SPC,    RALT_TD_RSFT, SYM
+							   ),
+
+
 	[_NUM] = LAYOUT_split_3x5_2(
 			KC_NO,   KC_NO,   KC_NO,  KC_NO,  KC_PERC,   KC_PLUS, KC_7, KC_8, KC_9, KC_MINS,
 			OS_SHFT, OS_CMD, OS_ALT, OS_CTRL, KC_EQL,    KC_DOT,  KC_4, KC_5, KC_6, KC_P,
@@ -87,10 +97,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                  KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS
                                                                ),
 	[_UTIL] = LAYOUT_split_3x5_2(
-			W1,   W2,    W3,    W4,    W5,        KC_NO, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
-			W6,   W7,    W8,    W9,    W10,       KC_NO, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
-			KC_NO,KC_NO, KC_NO, KC_NO, KC_NO,     KC_NO, KC_NO,   KC_COMM, KC_DOT,  KC_NO,
-			                   KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS
+			WPREV,   KC_7, KC_8, KC_9, WNEXT,        KC_NO, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
+			KC_NO,   KC_4, KC_5, KC_6, KC_ESC,       KC_NO, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
+			KC_LSFT, KC_1, KC_2, KC_3, KC_LCTL,      KC_NO, KC_NO,   KC_COMM, KC_DOT,  KC_NO,
+			                           KC_TRNS, KC_0,   KC_TRNS, KC_TRNS
                             ),
 
 };
@@ -119,9 +129,13 @@ enum combo_events {
   LPRN_COMBO_Q2,
   RCBR_COMBO_Q2,
   RPRN_COMBO_Q2,
-  // togggle utility layer
+  // toggle utility layer
   UTIL_COMBO_Q,
   UTIL_COMBO_Q2,
+  UTIL_COMBO_Q3,
+  // toggle game layer
+  GAME_COMBO_Q,
+  GAME_COMBO_Q2,
   // shift no right side
   RSFT_COMBO_Q,
   // beakl layer combos
@@ -155,6 +169,11 @@ const uint16_t PROGMEM esc_combo_q[] = {KC_D, KC_S, COMBO_END};
 // switch to util layer
 const uint16_t PROGMEM util_combo_q[] = {KC_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM util_combo_q2[] = {KC_X, KC_C, COMBO_END};
+const uint16_t PROGMEM util_combo_q3[] = {KC_1, KC_2, COMBO_END};
+// switch to game layer
+const uint16_t PROGMEM game_combo_q[] = {KC_Q, KC_W, COMBO_END};
+const uint16_t PROGMEM game_combo_q2[] = {KC_ESC, KC_B, COMBO_END}; //going back to normal
+
 // right shift
 const uint16_t PROGMEM rsft_combo_q[] = {KC_L, KC_SCLN, COMBO_END};
 
@@ -209,6 +228,10 @@ combo_t key_combos[] = {
   // toggle utility layer
   [UTIL_COMBO_Q]  = COMBO(util_combo_q, TG(_UTIL)),
   [UTIL_COMBO_Q2]  = COMBO(util_combo_q2, TG(_UTIL)),
+  [UTIL_COMBO_Q3]  = COMBO(util_combo_q3, TG(_UTIL)),
+  // toggle game layer
+  [UTIL_COMBO_Q]  = COMBO(game_combo_q, TG(_GAME)),
+  [UTIL_COMBO_Q2]  = COMBO(game_combo_q2, TG(_GAME)),
 
   // rshift
   [RSFT_COMBO_Q]  = COMBO_ACTION(rsft_combo_q),
