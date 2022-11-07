@@ -36,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_DEF] = LAYOUT_split_3x5_2(
 			KC_Q,         KC_W,         KC_E, KC_R, KC_T,    KC_Y, KC_U, KC_I,    KC_O,   COLON,
 			KC_A,         KC_S,         KC_D, KC_F, KC_G,    KC_H, KC_J, KC_K,    KC_L,   KC_SCLN,
-			KC_Z, KC_X, KC_C, KC_V, KC_B,    KC_N, KC_M, KC_COMM, LCTL_T(KC_DOT), LSFT_T(KC_SLSH),
+			KC_Z,         KC_X,         KC_C, KC_V, KC_B,    KC_N, KC_M, KC_COMM, LCTL_T(KC_DOT), LSFT_T(KC_SLSH),
 			                NUM, NAV_SPC,    RALT_TD_RSFT, SYM
 							   ),
 	[_KLW] = LAYOUT_split_3x5_2(
@@ -47,18 +47,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 							   ),
     // this layout is crazy. It is done, so it outputs qwerty while having software klawa ...
     // basic idea is, that it qwerty shifted to the right
-	[_GAME] = LAYOUT_split_3x5_2(
-			KC_ESC,       KC_B,         KC_M, KC_R, KC_T,    KC_Y, KC_U, KC_I,    KC_O,   COLON,
-			KC_TAB,       KC_A,         KC_D, KC_T, KC_G,    KC_H, KC_J, KC_K,    KC_L,   KC_SCLN,
-			LSFT_T(KC_Z), LCTL_T(KC_X), KC_C, KC_V, KC_B,    KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH,
-			                NUM, NAV_SPC,    RALT_TD_RSFT, SYM
+    // how to: while having klawa in OS, press button you want there,
+    // then, where this button is on qwerty and thats the key on klawa you write here.
+	//[_GAME] = LAYOUT_split_3x5_2(
+	//		KC_ESC,       KC_B,         KC_M, KC_S, KC_J,    KC_I, KC_O, KC_W,    KC_SCLN, KC_R,
+	//		KC_TAB,       KC_A,         KC_D, KC_T, KC_Q,    KC_V, KC_Y, KC_H,    KC_U,    KC_E,
+	//		KC_LSFT, LCTL_T(KC_K),      KC_X, KC_C, KC_Z,    KC_1, KC_2, KC_3, KC_4, KC_5, //KC_N, KC_F, KC_G,    KC_COMM, KC_DOT,
+	//		                            NUM, NAV_SPC,    RALT_TD_RSFT, SYM
+	//						   ),
+    // temp hack for Risen
+    [_GAME] = LAYOUT_split_3x5_2(
+			KC_ESC,       KC_1,         KC_M, KC_3, KC_J,    KC_I, KC_O, KC_W,    KC_SCLN, KC_R,
+			KC_TAB,       KC_A,         KC_D, KC_T, KC_Q,    KC_V, KC_Y, KC_H,    KC_U,    KC_E,
+			KC_LSFT, LCTL_T(KC_K),      KC_X, KC_C, KC_Z,    KC_1, KC_2, KC_3, KC_4, KC_5, //KC_N, KC_F, KC_G,    KC_COMM, KC_DOT,
+			                            NUM, NAV_SPC,    RALT_TD_RSFT, SYM
 							   ),
 
 
 	[_NUM] = LAYOUT_split_3x5_2(
 			KC_NO,   KC_NO,   KC_NO,  KC_NO,  KC_PERC,   KC_PLUS, KC_7, KC_8, KC_9, KC_MINS,
 			OS_SHFT, OS_CMD, OS_ALT, OS_CTRL, KC_EQL,    KC_DOT,  KC_4, KC_5, KC_6, KC_P,
-			KC_NO,   KC_NO,   KC_NO,  KC_NO,  KC_UNDS,   KC_ASTR, KC_1, KC_2, KC_3, KC_SLSH,
+			KC_F8,   KC_NO,   KC_NO,  KC_F9,  KC_UNDS,   KC_ASTR, KC_1, KC_2, KC_3, KC_SLSH,
 			                        KC_TRNS,  KC_TRNS,   KC_0, FUN
 								),
 
@@ -112,6 +121,7 @@ enum combo_events {
   // qwerty layer combos
   CAPS_COMBO_Q,
   ENTER_COMBO_Q,
+  ENTER_COMBO_G,
   TAB_COMBO_Q,
   BSP_COMBO_Q,
   DEL_COMBO_Q,
@@ -160,6 +170,7 @@ uint16_t COMBO_LEN = COMBO_LENGTH;
 // qwerty combos
 const uint16_t PROGMEM caps_combo_q[] = {KC_F, KC_J, COMBO_END};
 const uint16_t PROGMEM enter_combo_q[] = {KC_J, KC_K, COMBO_END};
+const uint16_t PROGMEM enter_combo_g[] = {KC_Y, KC_H, COMBO_END};
 const uint16_t PROGMEM tab_combo_q[] = {KC_F, KC_D, COMBO_END};
 const uint16_t PROGMEM bsp_combo_q[] = {KC_F, KC_S, COMBO_END};
 const uint16_t PROGMEM del_combo_q[] = {KC_J, KC_L, COMBO_END};
@@ -195,12 +206,12 @@ const uint16_t PROGMEM lcbr_combo_q[] = {KC_D, KC_E, COMBO_END}; // {
 const uint16_t PROGMEM lcbr_combo_q2[] = {KC_E, KC_R, COMBO_END}; // {
 const uint16_t PROGMEM lprn_combo_q[] = {KC_F, KC_R, COMBO_END}; // (
 const uint16_t PROGMEM lprn_combo_q2[] = {KC_C, KC_V, COMBO_END}; // (
-const uint16_t PROGMEM lbrc_combo_q[] = {KC_T, KC_G, COMBO_END}; // [
+const uint16_t PROGMEM lbrc_combo_q[] = {KC_W, KC_E, COMBO_END}; // [
 const uint16_t PROGMEM rcbr_combo_q[] = {KC_I, KC_K, COMBO_END}; // }
 const uint16_t PROGMEM rcbr_combo_q2[] = {KC_I, KC_U, COMBO_END}; // }
 const uint16_t PROGMEM rprn_combo_q[] = {KC_U, KC_J, COMBO_END}; // )
 const uint16_t PROGMEM rprn_combo_q2[] = {KC_M, KC_COMM, COMBO_END}; // )
-const uint16_t PROGMEM rbrc_combo_q[] = {KC_Y, KC_H, COMBO_END}; // ]
+const uint16_t PROGMEM rbrc_combo_q[] = {KC_I, KC_O, COMBO_END}; // ]
 
 // Ctrl-c combo mostly for Emacs
 const uint16_t PROGMEM ctrlc_combo_b[] = {KC_S, KC_T, KC_N, COMBO_END};
@@ -232,6 +243,8 @@ combo_t key_combos[] = {
   // toggle game layer
   [UTIL_COMBO_Q]  = COMBO(game_combo_q, TG(_GAME)),
   [UTIL_COMBO_Q2]  = COMBO(game_combo_q2, TG(_GAME)),
+  // game layer combos
+  [ENTER_COMBO_G] = COMBO(enter_combo_g, KC_ENT),
 
   // rshift
   [RSFT_COMBO_Q]  = COMBO_ACTION(rsft_combo_q),
@@ -339,7 +352,11 @@ bool caps_word_press_user(uint16_t keycode) {
 // it allowes us to use more user-friendly status names
 int cur_dance (qk_tap_dance_state_t *state) {
   if (state->count == 1) {
-    if (state->interrupted || !state->pressed)  return SINGLE_TAP;
+    //if (state->interrupted || !state->pressed)  return SINGLE_TAP;
+    // ER: removed interrupted check, so it works nicelly with enter/ralt
+    // it will not trigger SINGLE_TAP if other key is hit.
+    if (!state->pressed)  return SINGLE_TAP;
+    //else if (state->interrupted && state->pressed) return SINGLE_HOLD;
     //key has not been interrupted, but they key is still held. Means you want to send a 'HOLD'.
     else return SINGLE_HOLD;
   }
@@ -378,8 +395,9 @@ void shiftralt_finished (qk_tap_dance_state_t *state, void *user_data) {
 
   switch (shiftralttap_state.state) {
     case SINGLE_TAP: 
-                       update_oneshot(&os_ralt_state, KC_RALT, OS_RALT,
-                                   OS_RALT, &record, false);
+                       //update_oneshot(&os_ralt_state, KC_RALT, OS_RALT,
+                       //            OS_RALT, &record, false);
+                       register_code(KC_ENT); // change it to send enter
                       break;
     case SINGLE_HOLD: register_code(KC_RALT); break;
     case DOUBLE_SINGLE_TAP: 
@@ -399,8 +417,9 @@ void shiftralt_reset (qk_tap_dance_state_t *state, void *user_data) {
   switch (shiftralttap_state.state) {
     case SINGLE_TAP:
                     ;
-                    update_oneshot(&os_ralt_state, KC_RALT, OS_RALT,
-                                   OS_RALT, &record, false);
+                    //update_oneshot(&os_ralt_state, KC_RALT, OS_RALT,
+                    //               OS_RALT, &record, false);
+                    unregister_code(KC_ENT);// change it to send enter
                     break;
     case SINGLE_HOLD: unregister_code(KC_RALT); break;
     case DOUBLE_SINGLE_TAP: 
