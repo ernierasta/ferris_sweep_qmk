@@ -9,6 +9,8 @@
 # Actual keymap for 3x5 ferris sweep
 # qmk compile -kb ferris/sweep -km ernierasta
 
+# TODO: output is mess
+
 MY_HOME=`echo $HOME`
 QMK_HOME="$MY_HOME/qmk_firmware"
 
@@ -17,17 +19,20 @@ REPO_DIR="$(realpath "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 &
 
 
 function symlink_ferris_sweep_custom_keymap() {
-  local source_keymap="$REPO_DIR/ernierasta"
-  local symlink_destination="$QMK_HOME/keyboards/ferris/keymaps/ernierasta"
+  local source_keymap="$1"
+  local symlink_destination="$2"
 
   if [ ! -d "$symlink_destination" ]; then
-    echo "Symlinking Ferris Sweep ernierasta keymap"
+    echo "Symlinking Ferris Sweep $1 keymap"
     ln -s "$source_keymap" "$symlink_destination"
   else
     echo "Keymap already in place, nothing to do"
   fi
   echo "Build:"
   echo "qmk compile -kb ferris/sweep -km ernierasta"
+  echo "qmk compile -kb ferris/sweep -km ernierasta-v2"
 }
 
-symlink_ferris_sweep_custom_keymap
+symlink_ferris_sweep_custom_keymap "$REPO_DIR/ernierasta" "$QMK_HOME/keyboards/ferris/keymaps/ernierasta"
+symlink_ferris_sweep_custom_keymap "$REPO_DIR/ernierasta-v2" "$QMK_HOME/keyboards/ferris/keymaps/ernierasta-v2"
+
