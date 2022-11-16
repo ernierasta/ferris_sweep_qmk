@@ -137,6 +137,7 @@ bool achordion_chord(uint16_t tap_hold_keycode,
     case BSPC_SYM:
     case ENT_SYM:
       return true;
+      break;
   }
 
 
