@@ -8,3 +8,5 @@ RGBLIGHT_ENABLE = no
 DYNAMIC_TAPPING_TERM_ENABLE = no
 CAPS_WORD_ENABLE = yes
 MOUSEKEY_ENABLE = yes
+
+SRC += features/achordion.c

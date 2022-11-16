@@ -3,9 +3,10 @@
 #define NO_ACTION_FUNCTION
 
 // Tap/hold settings
-#define TAPPING_TERM 200
+#define TAPPING_TERM 170
 // Prevent triggering hold, when you press second key before releasing first 
 #define IGNORE_MOD_TAP_INTERRUPT
+#define PERMISSIVE_HOLD
 
 // adjusting mouse key speed
 #define MOUSEKEY_DELAY 20
